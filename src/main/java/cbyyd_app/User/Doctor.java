@@ -1,4 +1,4 @@
-package User;
+package cbyyd_app.User;
 
 public class Doctor extends User {
     private String code;

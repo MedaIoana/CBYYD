@@ -12,11 +12,13 @@ public class LoginRegistrationControllers {
     @FXML
     private PasswordField passwordField;
     @FXML
+    private TextField codeField;
+    @FXML
     private TextField usernameField;
     @FXML
     private ChoiceBox role;
 
-    @FXML
+   /* @FXML
     public void handleRegisterAction() {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
@@ -34,5 +36,5 @@ public class LoginRegistrationControllers {
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }
-    }
+    }*/
 }
