@@ -41,7 +41,7 @@ public class UserService {
 
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExists {
+    /*private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExists {
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExists(username);
@@ -67,5 +67,5 @@ public class UserService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
-    }
+    }*/
 }
