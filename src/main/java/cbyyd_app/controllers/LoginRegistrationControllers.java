@@ -5,10 +5,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import cbyyd_app.services.UserService;
+import cbyyd_app.exceptions.UsernameAlreadyExists;
 
 public class LoginRegistrationControllers {
     @FXML
     private Text registrationMessage;
+    @FXML
+    private Text loginMessage;
     @FXML
     private PasswordField passwordField;
     @FXML
@@ -18,12 +22,17 @@ public class LoginRegistrationControllers {
     @FXML
     private ChoiceBox role;
 
-   /* @FXML
+    @FXML
+    public void initialize() {
+        role.getItems().addAll("Patient", "Doctor");
+    }
+
+    @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(),codeField.getText());
             registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExistsException e) {
+        } catch (UsernameAlreadyExists e) {
             registrationMessage.setText(e.getMessage());
         }
     }
@@ -31,10 +40,10 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleLoginAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-            registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExistsException e) {
-            registrationMessage.setText(e.getMessage());
+            UserService.loginUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+            loginMessage.setText("Login!");
+        } catch (WrongUsernamePassword e) {
+            loginMessage.setText(e.getMessage());
         }
-    }*/
+    }
 }

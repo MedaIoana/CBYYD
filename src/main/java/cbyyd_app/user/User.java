@@ -1,4 +1,4 @@
-package cbyyd_app.User;
+package cbyyd_app.user;
 
 public class User  {
     private String username;
