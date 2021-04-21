@@ -3,14 +3,10 @@ package cbyyd_app.user;
 public class User  {
     private String username;
     private String password;
-    private String role;
-    private String code;
 
-    public User(String var1, String var2,String var3,String var4) {
+    public User(String var1, String var2) {
         this.username = var1;
         this.password = var2;
-        this.role=var3;
-        this.code=var4;
     }
 
     public String getUsername() {
