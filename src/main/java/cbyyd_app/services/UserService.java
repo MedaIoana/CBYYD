@@ -1,16 +1,17 @@
 package cbyyd_app.services;
 
+import cbyyd_app.exceptions.WrongUsernamePasswordException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
-import cbyyd_app.exceptions.UsernameAlreadyExists;
+import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.user.User;
-import cbyyd_app.services.FileService;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
 
 
 public class UserService {
@@ -29,12 +30,39 @@ public class UserService {
         });
     }
 
-    public static void addUser(String username, String password, String role,String code) throws UsernameAlreadyExists{
+    public static void addUser(String username, String password, String role, String code) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        users.add(new User(username,encodePassword(username,password),role,code));
+        users.add(new User(username, encodePassword(username, password), role, code));
     }
 
-    public static void loginUser(String username, String password, String role) throws WrongUsernamePassword {
+    public static void loginUser(String username, String password, String role) throws WrongUsernamePasswordException {
 
+    }
+
+    public static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException
+    {
+        for (User user : users)
+        {
+            if (Objects.equals(username, user.getUsername()))
+                throw new UsernameAlreadyExistsException(username);
+        }
+    }
+
+    public static void CheckPasswordIsCorrect(String password) throws WrongUsernamePasswordException
+    {
+        for (User user : users)
+        {
+            if (!Objects.equals(password, user.getPassword()))
+                throw new WrongUsernamePasswordException();
+        }
+    }
+
+    public static void CheckUsernameIsCorrect(String username) throws WrongUsernamePasswordException
+    {
+        for (User user : users)
+        {
+            if (!Objects.equals(username, user.getUsername()))
+                throw new WrongUsernamePasswordException();
+        }
     }
 }
