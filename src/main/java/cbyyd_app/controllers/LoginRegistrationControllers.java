@@ -1,12 +1,13 @@
 package cbyyd_app.controllers;
 
+import cbyyd_app.exceptions.UsernameAlreadyExistsException;
+import cbyyd_app.exceptions.WrongUsernamePasswordException;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import cbyyd_app.services.UserService;
-import cbyyd_app.exceptions.UsernameAlreadyExists;
 
 public class LoginRegistrationControllers {
     @FXML
@@ -32,7 +33,7 @@ public class LoginRegistrationControllers {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(),codeField.getText());
             registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExists e) {
+        } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }
     }
@@ -42,7 +43,7 @@ public class LoginRegistrationControllers {
         try {
             UserService.loginUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
             loginMessage.setText("Login!");
-        } catch (WrongUsernamePassword e) {
+        } catch (WrongUsernamePasswordException e) {
             loginMessage.setText(e.getMessage());
         }
     }

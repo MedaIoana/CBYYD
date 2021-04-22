@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane xmlns="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="600" prefWidth="800"
-          vgap="10" xmlns:fx="http://javafx.com/fxml/10.0.2-internal"
-          fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
+<GridPane alignment="center" hgap="10" prefHeight="600" prefWidth="800" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
     <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
 
     <padding>
-        <Insets bottom="25.0" left="5.0" right="5.0" top="25.0"/>
+        <Insets bottom="25.0" left="5.0" right="5.0" top="25.0" />
     </padding>
 
-    <Text id="title-text" text="Connect With" GridPane.columnIndex="1" GridPane.columnSpan="2"
-          GridPane.rowIndex="0"/>
+    <Text id="title-text" text="Connect With" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
 
-    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Username:" GridPane.rowIndex="2" />
+    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Password:" GridPane.rowIndex="3" />
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Label text="Code:(if register as doctor)" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-    <PasswordField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Label text="Code:(if register as doctor)" GridPane.rowIndex="4" />
+    <PasswordField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-    <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+    <Label text="Role:" GridPane.rowIndex="5" />
+    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
     </ChoiceBox>
 
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button onAction="#handleRegisterAction" text="Register"/>
-        <Button onAction="#handleLoginAction" text="Login"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <Button onAction="#handleRegisterAction" text="Register" />
+        <Button onAction="#handleLoginAction" text="Login" />
     </HBox>
+   <ColorPicker GridPane.rowIndex="1" />
+   <ColorPicker GridPane.rowIndex="1">
+      <value>
+         <Color red="0.8148391842842102" green="0.7324561476707458" blue="0.9473684430122375" />
+      </value></ColorPicker>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 
 </GridPane>
