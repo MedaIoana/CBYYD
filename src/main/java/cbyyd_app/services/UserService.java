@@ -39,6 +39,7 @@ public class UserService {
     public static void addUser(String username, String password, String role,String code) throws UsernameAlreadyExistsException{
         checkUserDoesNotAlreadyExist(username);
         users.add(new User(username,encodePassword(username,password),role,code));
+        persistUsers();
     }
 
     public static void loginUser(String username, String password, String role) throws WrongUsernamePasswordException {
