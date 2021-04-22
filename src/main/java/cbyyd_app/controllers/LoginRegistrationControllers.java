@@ -27,15 +27,7 @@ public class LoginRegistrationControllers {
         role.getItems().addAll("Patient", "Doctor");
     }
 
-    @FXML
-    public void handleRegisterAction() {
-        try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(),codeField.getText());
-            registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExists e) {
-            registrationMessage.setText(e.getMessage());
-        }
-    }
+
 
     @FXML
     public void handleLoginAction() {
