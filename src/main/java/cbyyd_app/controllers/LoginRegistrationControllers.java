@@ -11,17 +11,17 @@ import cbyyd_app.services.UserService;
 
 public class LoginRegistrationControllers {
     @FXML
-    private Text registrationMessage;
+     Text registrationMessage;
     @FXML
-    private Text loginMessage;
+     Text loginMessage;
     @FXML
-    private PasswordField passwordField;
+    PasswordField passwordField;
     @FXML
-    private TextField codeField;
+    TextField codeField;
     @FXML
-    private TextField usernameField;
+    TextField usernameField;
     @FXML
-    private ChoiceBox role;
+    ChoiceBox role;
 
     @FXML
     public void initialize() {

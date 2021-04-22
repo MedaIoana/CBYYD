@@ -3,7 +3,6 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <GridPane alignment="center" hgap="10" prefHeight="600" prefWidth="800" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
@@ -34,24 +33,5 @@
         <Button onAction="#handleRegisterAction" text="Register" />
         <Button onAction="#handleLoginAction" text="Login" />
     </HBox>
-   <ColorPicker GridPane.rowIndex="1" />
-   <ColorPicker GridPane.rowIndex="1">
-      <value>
-         <Color red="0.8148391842842102" green="0.7324561476707458" blue="0.9473684430122375" />
-      </value></ColorPicker>
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
 
 </GridPane>
