@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
 
 
 public class UserService {
@@ -36,5 +37,12 @@ public class UserService {
 
     public static void loginUser(String username, String password, String role) throws WrongUsernamePassword {
 
+    }
+
+    static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExists {
+        for (User user : users) {
+            if (Objects.equals(username, user.getUsername()))
+                throw new UsernameAlreadyExists(username);
+        }
     }
 }
