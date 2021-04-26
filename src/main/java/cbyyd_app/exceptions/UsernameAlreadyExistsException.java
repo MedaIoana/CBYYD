@@ -2,7 +2,7 @@ package cbyyd_app.exceptions;
 
 public class UsernameAlreadyExistsException extends Exception
 {
-    private final String username;
+    private String username;
 
     public UsernameAlreadyExistsException(String username)
     {

@@ -5,7 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="600" prefWidth="800" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
+<GridPane alignment="center" hgap="10" prefHeight="600" prefWidth="800" vgap="10"
+          xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
@@ -22,11 +24,11 @@
     <Label text="Password:" GridPane.rowIndex="3" />
     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Label text="Code:(if register as doctor)" GridPane.rowIndex="4" />
-    <PasswordField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Label text="Code:(if register as doctor)" GridPane.rowIndex="5" />
+    <TextField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-    <Label text="Role:" GridPane.rowIndex="5" />
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+    <Label text="Role:" GridPane.rowIndex="4" />
+    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
     </ChoiceBox>
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">

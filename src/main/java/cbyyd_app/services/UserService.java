@@ -8,8 +8,6 @@ import org.apache.commons.io.FileUtils;
 import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.user.User;
 
-
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -18,7 +16,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Objects;
-
 
 public class UserService {
     private static List<User> users;

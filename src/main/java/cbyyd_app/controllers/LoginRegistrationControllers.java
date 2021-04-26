@@ -1,27 +1,27 @@
 package cbyyd_app.controllers;
 
-import cbyyd_app.exceptions.UsernameAlreadyExistsException;
-import cbyyd_app.exceptions.WrongUsernamePasswordException;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import cbyyd_app.services.UserService;
+import cbyyd_app.exceptions.UsernameAlreadyExistsException;
+import cbyyd_app.exceptions.WrongUsernamePasswordException;
 
 public class LoginRegistrationControllers {
     @FXML
-     Text registrationMessage;
+    Text registrationMessage;
     @FXML
-     Text loginMessage;
+    Text loginMessage;
     @FXML
-    PasswordField passwordField;
+    private PasswordField passwordField;
     @FXML
-    TextField codeField;
+    private TextField codeField;
     @FXML
-    TextField usernameField;
+    private TextField usernameField;
     @FXML
-    ChoiceBox role;
+    private ChoiceBox<String> role;
 
     @FXML
     public void initialize() {
@@ -31,7 +31,7 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(),codeField.getText());
+            UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(),codeField.getText());
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
@@ -41,7 +41,7 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleLoginAction() {
         try {
-            UserService.loginUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+            UserService.loginUser(usernameField.getText(), passwordField.getText(), role.getValue());
             loginMessage.setText("Login!");
         } catch (WrongUsernamePasswordException e) {
             loginMessage.setText(e.getMessage());
