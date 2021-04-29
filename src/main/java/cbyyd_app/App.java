@@ -7,6 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
+
 public class App extends Application {
 
     public static void main(String[] args) {
@@ -14,13 +17,12 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-
+    public void start(Stage primaryStage) throws IOException {
         UserService.loadUsersFromFile();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-        primaryStage.setTitle("Register/Login");
         primaryStage.setScene(new Scene(root, 600, 550));
+        primaryStage.setTitle("Register/Login");
         primaryStage.show();
     }
 }
