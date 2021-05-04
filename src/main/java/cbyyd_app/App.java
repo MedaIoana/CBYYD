@@ -1,11 +1,14 @@
-package cbyyd_app;//.User;
+package cbyyd_app;
 
-
+import cbyyd_app.services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+
 
 public class App extends Application {
 
@@ -14,13 +17,12 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        //User.loadUsersFromFile();
+    public void start(Stage primaryStage) throws IOException {
+        UserService.loadUsersFromFile();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-        primaryStage.setTitle("Register/Login");
         primaryStage.setScene(new Scene(root, 600, 550));
+        primaryStage.setTitle("Register/Login");
         primaryStage.show();
     }
 }

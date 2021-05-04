@@ -1,18 +1,28 @@
 package cbyyd_app.controllers;
 
+import cbyyd_app.exceptions.CodeAlreadyExist;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import cbyyd_app.services.UserService;
-import cbyyd_app.exceptions.UsernameAlreadyExists;
+import cbyyd_app.exceptions.UsernameAlreadyExistsException;
+import cbyyd_app.exceptions.WrongUsernamePasswordException;
+
+import java.util.Objects;
+
 
 public class LoginRegistrationControllers {
+
     @FXML
-    private Text registrationMessage;
+    public Button Regbutton;
     @FXML
-    private Text loginMessage;
+    Text registrationMessage;
+    @FXML
+    Text loginMessage;
     @FXML
     private PasswordField passwordField;
     @FXML
@@ -20,7 +30,7 @@ public class LoginRegistrationControllers {
     @FXML
     private TextField usernameField;
     @FXML
-    private ChoiceBox role;
+    private ChoiceBox<String> role;
 
     @FXML
     public void initialize() {
@@ -30,20 +40,28 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(),codeField.getText());
+            UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(),codeField.getText());
             registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExists e) {
+        } catch (UsernameAlreadyExistsException | CodeAlreadyExist e) {
             registrationMessage.setText(e.getMessage());
         }
     }
 
     @FXML
     public void handleLoginAction() {
-        try {
-            UserService.loginUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-            loginMessage.setText("Login!");
-        } catch (WrongUsernamePassword e) {
-            loginMessage.setText(e.getMessage());
+        if(role.getValue().equals("Patient")){
+            try {
+                loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/patientGUI.fxml")));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        else if(role.getValue().equals("Doctor")){
+            try {
+                loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
