@@ -33,10 +33,17 @@ public class UserService {
         });
     }
 
-    public static void addUser(String username, String password, String role,String code) throws UsernameAlreadyExistsException{
+    public static void addUser(String username, String password, String role,String code) throws UsernameAlreadyExistsException, CodeAlreadyExist {
         checkUserDoesNotAlreadyExist(username);
+        checkCodeDoesNotAlreadyExist(code);
         users.add(new User(username,encodePassword(username,password),role,code));
         persistUsers();
+    }
+    public static void checkCodeDoesNotAlreadyExist(String code) throws CodeAlreadyExist {
+        for (User user : users) {
+            if (Objects.equals(code, user.getCode()))
+                throw new CodeAlreadyExist(code);
+        }
     }
 
     public static void loginUser(String username, String password) throws WrongUsernamePasswordException {
