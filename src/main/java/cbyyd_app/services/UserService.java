@@ -1,5 +1,6 @@
 package cbyyd_app.services;
 
+import cbyyd_app.exceptions.CodeAlreadyExist;
 import cbyyd_app.exceptions.CouldNotWriteUserException;
 import cbyyd_app.exceptions.WrongUsernamePasswordException;
 import com.fasterxml.jackson.core.type.TypeReference;

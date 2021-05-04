@@ -1,5 +1,6 @@
 package cbyyd_app.controllers;
 
+import cbyyd_app.exceptions.CodeAlreadyExist;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -41,7 +42,7 @@ public class LoginRegistrationControllers {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(),codeField.getText());
             registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExistsException e) {
+        } catch (UsernameAlreadyExistsException | CodeAlreadyExist e) {
             registrationMessage.setText(e.getMessage());
         }
     }
