@@ -40,7 +40,17 @@ public class UserService {
     }
 
     public static void loginUser(String username, String password) throws WrongUsernamePasswordException {
-
+        checkUsernameAndPassword(username,password);
+    }
+    public static void checkUsernameAndPassword(String username, String password) throws  WrongUsernamePasswordException{
+        boolean find=false;
+        for (User user: users) {
+            if(Objects.equals(username,user.getUsername()) && Objects.equals(encodePassword(username,password),user.getPassword())){
+                find=true;
+                break;
+            }
+        }
+        if(!find) throw new  WrongUsernamePasswordException(username,password);
     }
 
     static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
