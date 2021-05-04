@@ -39,7 +39,7 @@ public class UserService {
         persistUsers();
     }
 
-    public static void loginUser(String username, String password, String role) throws WrongUsernamePasswordException {
+    public static void loginUser(String username, String password) throws WrongUsernamePasswordException {
 
     }
 

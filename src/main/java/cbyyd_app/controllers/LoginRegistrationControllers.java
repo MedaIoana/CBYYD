@@ -23,6 +23,7 @@ public class LoginRegistrationControllers {
     @FXML
     private ChoiceBox<String> role;
 
+
     @FXML
     public void initialize() {
         role.getItems().addAll("Patient", "Doctor");
@@ -41,8 +42,20 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleLoginAction() {
         try {
-            UserService.loginUser(usernameField.getText(), passwordField.getText(), role.getValue());
-            loginMessage.setText("Login!");
+            UserService.checkUsernameAndPassword(usernameField.getText(), passwordField.getText());
+            if (role.getValue().equals("Patient")) {
+                try {
+                    loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/patientGUI.fxml")));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (role.getValue().equals("Doctor")) {
+                try {
+                    loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         } catch (WrongUsernamePasswordException e) {
             loginMessage.setText(e.getMessage());
         }
