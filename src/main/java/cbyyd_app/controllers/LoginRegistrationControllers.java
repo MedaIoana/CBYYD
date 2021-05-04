@@ -2,6 +2,7 @@ package cbyyd_app.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,7 +11,13 @@ import cbyyd_app.services.UserService;
 import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.exceptions.WrongUsernamePasswordException;
 
+import java.util.Objects;
+
+
 public class LoginRegistrationControllers {
+
+    @FXML
+    public Button Regbutton;
     @FXML
     Text registrationMessage;
     @FXML
@@ -23,7 +30,6 @@ public class LoginRegistrationControllers {
     private TextField usernameField;
     @FXML
     private ChoiceBox<String> role;
-
 
     @FXML
     public void initialize() {
@@ -42,23 +48,19 @@ public class LoginRegistrationControllers {
 
     @FXML
     public void handleLoginAction() {
-        try {
-            UserService.checkUsernameAndPassword(usernameField.getText(), passwordField.getText());
-            if (role.getValue().equals("Patient")) {
-                try {
-                    loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/patientGUI.fxml")));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else if (role.getValue().equals("Doctor")) {
-                try {
-                    loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        if(role.getValue().equals("Patient")){
+            try {
+                loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/patientGUI.fxml")));
+            }catch (Exception e){
+                e.printStackTrace();
             }
-        } catch (WrongUsernamePasswordException e) {
-            loginMessage.setText(e.getMessage());
+        }
+        else if(role.getValue().equals("Doctor")){
+            try {
+                loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
