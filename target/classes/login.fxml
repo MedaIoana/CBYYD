@@ -33,7 +33,7 @@
 
     <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="6">
-        <Button fx:id="Regbutton" onAction="#handleRegisterAction" text="Register" />
+        <Button onAction="#handleRegisterAction" text="Register" />
     </HBox>
 
     <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
