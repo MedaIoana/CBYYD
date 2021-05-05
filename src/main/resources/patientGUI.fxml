@@ -4,36 +4,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.patientGUIControllers">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.patientGUIControllers">
    <children>
-      <Label layoutX="67.0" layoutY="47.0" text="Choose your option :">
+      <Label layoutX="189.0" layoutY="76.0" text="Choose your option :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="166.0" layoutY="161.0" mnemonicParsing="false" onAction="#TreatementsTestsHandler" text="SEE TREATEMENTS AND TESTS">
          <font>
             <Font size="18.0" />
          </font>
-      </Label>
-      <Button layoutX="45.0" layoutY="89.0" mnemonicParsing="false"
-              onAction="#TreatementsTestsHandler" text="SEE TREATEMENTS AND TESTS">
+      </Button>
+      <Button layoutX="186.0" layoutY="284.0" mnemonicParsing="false" onAction="#DoctorScheduleHandler" prefHeight="39.0" prefWidth="228.0" text="SEE DOCTOR'S SHEDULE">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="64.0" layoutY="183.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0"
-              onAction="#DoctorScheduleHandler" text="SEE DOCTOR'S SHEDULE">
+      <Button layoutX="186.0" layoutY="222.0" mnemonicParsing="false" onAction="#AppointmentHandler" text="MAKE AN APPOINTMENT">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="61.0" layoutY="135.0" mnemonicParsing="false"
-              onAction="#AppointmentHandler" text="MAKE AN APPOINTMENT">
+      <Button layoutX="235.0" layoutY="347.0" mnemonicParsing="false" onAction="#ScheduleHandler" text="MY SHEDULE">
          <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="100.0" layoutY="228.0" mnemonicParsing="false"
-              onAction="#ScheduleHandler" text="MY SHEDULE">
-         <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Button>
    </children>
