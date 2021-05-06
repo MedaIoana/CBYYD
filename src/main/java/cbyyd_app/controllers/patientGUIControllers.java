@@ -1,8 +1,6 @@
 package cbyyd_app.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class patientGUIControllers {
     @FXML
@@ -19,5 +17,9 @@ public class patientGUIControllers {
 
     @FXML
     public void ScheduleHandler() {
+    }
+
+    @FXML
+    public void backHandler() {
     }
 }
