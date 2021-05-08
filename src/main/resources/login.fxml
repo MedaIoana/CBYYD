@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
    <children>
       <GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" vgap="10">
           <padding>
