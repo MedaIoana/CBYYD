@@ -28,7 +28,11 @@ public class DoctorService extends UserService {
         });
     }
 
-
+    public static void addPatient(String username) throws PatientAlreadyExistsExeption {
+        checkPatientDoesNotAlreadyExists(username);
+        patients.add(new User(username));
+        persistUsers();
+    }
 
     public static void checkPatientDoesNotAlreadyExists(String username) throws PatientAlreadyExistsExeption{
         for (User patient : patients) {
