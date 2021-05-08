@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.managingpatientControllers">
@@ -11,21 +12,20 @@
          <Font size="24.0" />
       </font></Label>
     <TextField fx:id="usernameField" layoutX="280.0" layoutY="163.0" prefHeight="35.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-   <Button layoutX="75.0" layoutY="261.0" mnemonicParsing="false" onAction="#addHandler" text="ADD">
+   <Button layoutX="75.0" layoutY="261.0" mnemonicParsing="false" onAction="#addHandler" style="-fx-background-color: #228B22;" text="ADD" textFill="WHITE">
+      <font>
+         <Font name="Arial Black" size="18.0" />
+      </font>
+   </Button>
+   <Button layoutX="461.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteHandler" style="-fx-background-color: #FF0000;" text="DELETE" textFill="WHITE">
+      <font>
+         <Font name="Arial Black" size="18.0" />
+      </font>
+   </Button>
+   <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHAndler" text="🔙">
       <font>
          <Font size="18.0" />
       </font>
    </Button>
-   <Button layoutX="461.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteHandler" text="DELETE">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Button>
-   <Button layoutY="2.0" mnemonicParsing="false"
-           onAction="#backHAndler" text="🔙">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Button>
-
+   <CubicCurve controlX1="50.0" controlX2="50.0" controlY1="-98.0" controlY2="100.0" endX="349.85205078125" endY="3.0" fill="#111e6c" layoutX="252.0" layoutY="80.0" startX="-252.0" startY="3.0" stroke="BLACK" />
 </AnchorPane>
