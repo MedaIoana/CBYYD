@@ -49,7 +49,7 @@
                <Font size="13.0" />
             </font></TextField>
       
-          <Label text="Role:" GridPane.rowIndex="4">
+          <Label text="Role: (mandatory)" GridPane.rowIndex="4">
             <font>
                <Font size="13.0" />
             </font></Label>
@@ -68,6 +68,7 @@
           <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
               <Button onAction="#handleLoginAction" text="Login" />
           </HBox>
+
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />

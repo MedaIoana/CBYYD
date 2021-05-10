@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddTreatments">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddTreatments">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="400.0" stroke="BLACK" strokeType="INSIDE" width="42.0" />
       <Circle fill="#111e6c" layoutX="88.0" layoutY="245.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />

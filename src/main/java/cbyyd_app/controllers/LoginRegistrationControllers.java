@@ -13,6 +13,8 @@ import cbyyd_app.exceptions.WrongUsernamePasswordException;
 
 public class LoginRegistrationControllers {
 
+    private static String usernameD;
+
     @FXML
     Text registrationMessage;
     @FXML
@@ -53,6 +55,7 @@ public class LoginRegistrationControllers {
                 }
             } else if (role.getValue().equals("Doctor")) {
                 try {
+                    usernameD=usernameField.getText();
                     loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -62,4 +65,9 @@ public class LoginRegistrationControllers {
             loginMessage.setText(e.getMessage());
         }
     }
+
+    public static String getUsernameD() {
+        return usernameD;
+    }
+
 }

@@ -40,6 +40,17 @@ public class UserService {
         users.add(new User(username,encodePassword(username,password),role,code));
         persistUsers();
     }
+
+    public static void addPatients(String patient, String doctor){
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername()))
+            {
+                user.getPatients().add(patient);
+            }
+        }
+        persistUsers();
+    }
+
     public static void checkCodeDoesNotAlreadyExist(String code) throws CodeAlreadyExist {
         for (User user : users) {
             if (Objects.equals(code, user.getCode()))
