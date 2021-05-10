@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddTreatments">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="400.0" stroke="BLACK" strokeType="INSIDE" width="42.0" />
+      <Circle fill="#111e6c" layoutX="88.0" layoutY="245.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="79.0" layoutY="357.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="WHITE" layoutX="21.0" layoutY="282.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="56.0" layoutY="313.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="65.0" layoutY="282.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="56.0" layoutY="236.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="WHITE" layoutX="21.0" layoutY="91.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="56.0" layoutY="140.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="WHITE" layoutX="28.0" layoutY="191.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="74.0" layoutY="182.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="65.0" layoutY="68.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#111e6c" layoutX="74.0" layoutY="109.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="-1.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="-1.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text layoutX="152.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please write down what treatments do you want to add" wrappingWidth="296.21630859375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="142.0" layoutY="145.0" prefHeight="196.0" prefWidth="392.0" />
+   </children>
+</AnchorPane>
