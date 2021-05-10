@@ -3,42 +3,115 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="600" prefWidth="800" vgap="10"
-          xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-          fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-    </padding>
-
-    <padding>
-        <Insets bottom="25.0" left="5.0" right="5.0" top="25.0" />
-    </padding>
-
-    <Text id="title-text" text="Connect With" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-
-    <Label text="Username:" GridPane.rowIndex="2" />
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-    <Label text="Password:" GridPane.rowIndex="3" />
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-
-    <Label text="Code:(if register as doctor)" GridPane.rowIndex="5" />
-    <TextField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-
-    <Label text="Role:" GridPane.rowIndex="4" />
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.LoginRegistrationControllers">
+   <children>
+      <GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" vgap="10">
+          <padding>
+              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+          </padding>
+      
+          <padding>
+              <Insets bottom="25.0" left="5.0" right="5.0" top="25.0" />
+          </padding>
+      
+          <Text id="title-text" text="Connect With" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+            <font>
+               <Font size="14.0" />
+            </font></Text>
+      
+          <Label text="Username:" GridPane.rowIndex="2">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+          <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+               <Font size="13.0" />
+            </font></TextField>
+      
+          <Label text="Password:" GridPane.rowIndex="3">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+          <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <font>
+               <Font size="13.0" />
+            </font></PasswordField>
+      
+          <Label text="Code:(if register as doctor)" GridPane.rowIndex="5">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+          <TextField fx:id="codeField" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <font>
+               <Font size="13.0" />
+            </font></TextField>
+      
+          <Label text="Role:" GridPane.rowIndex="4">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+          <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
     </ChoiceBox>
+      
+          <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <font>
+               <Font size="13.0" />
+            </font></Text>
+          <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="6">
+              <Button onAction="#handleRegisterAction" text="Register" />
+          </HBox>
+      
+          <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+          <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
+              <Button onAction="#handleLoginAction" text="Login" />
+          </HBox>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+          
+      
+      </GridPane>
+       <Rectangle arcHeight="4.0" arcWidth="4.0" fill="#2F4F4F" height="18.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="634.0" />
+       <Text layoutX="14.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/@CBYYD">
+           <font>
+               <Font name="Apple Braille" size="11.0" />
+           </font>
+       </Text>
 
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="6">
-        <Button onAction="#handleRegisterAction" text="Register" />
-    </HBox>
+       <Circle fill="#2F4F4F" layoutX="523.0" layoutY="123.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="530.0" layoutY="146.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="524.0" layoutY="174.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="526.0" layoutY="211.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="532.0" layoutY="252.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="537.0" layoutY="278.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="531.0" layoutY="301.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="534.0" layoutY="340.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="515.0" layoutY="100.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
 
-    <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
-        <Button onAction="#handleLoginAction" text="Login" />
-    </HBox>
+       <Circle fill="#2F4F4F" layoutX="85.0" layoutY="123.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="92.0" layoutY="146.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="84.0" layoutY="174.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="86.0" layoutY="211.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="92.0" layoutY="252.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="97.0" layoutY="278.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="91.0" layoutY="301.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="95.0" layoutY="340.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+       <Circle fill="#2F4F4F" layoutX="100.0" layoutY="100.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
 
-</GridPane>
+   </children>
+</AnchorPane>

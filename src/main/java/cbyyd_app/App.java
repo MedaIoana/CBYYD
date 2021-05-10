@@ -21,8 +21,9 @@ public class App extends Application {
         UserService.loadUsersFromFile();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-        primaryStage.setScene(new Scene(root, 600, 550));
-        primaryStage.setTitle("Register/Login");
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setTitle("CBYYD");
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }

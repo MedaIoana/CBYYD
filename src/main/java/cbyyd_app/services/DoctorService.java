@@ -12,7 +12,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
 
-public class DoctorService {
+public class DoctorService extends UserService {
     private static List<User> patients;
     private static final Path USERS_PATH = FileService.getPathToFile("config", "patients.json");
 
@@ -29,10 +29,15 @@ public class DoctorService {
     }
 
     public static void addPatient(String username) throws PatientAlreadyExistsExeption {
-
+        checkPatientDoesNotAlreadyExists(username);
+        patients.add(new User(username));
+        persistUsers();
     }
 
-    public static void checkPatientDoesNotAlreadyExists(String username){
-
+    public static void checkPatientDoesNotAlreadyExists(String username) throws PatientAlreadyExistsExeption{
+        for (User patient : patients) {
+            if (Objects.equals(username, patient.getUsername()))
+                throw new PatientAlreadyExistsExeption(username);
+        }
     }
 }
