@@ -1,12 +1,9 @@
 package cbyyd_app.services;
 
-import cbyyd_app.exceptions.CodeAlreadyExist;
-import cbyyd_app.exceptions.CouldNotWriteUserException;
-import cbyyd_app.exceptions.WrongUsernamePasswordException;
+import cbyyd_app.exceptions.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
-import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.user.User;
 
 import java.io.IOException;
@@ -41,14 +38,45 @@ public class UserService {
         persistUsers();
     }
 
-    public static void addPatients(String patient, String doctor){
+    public static void addPatients(String patient, String doctor) throws PatientAlreadyExistsExeption{
         for (User user : users) {
             if (Objects.equals(doctor, user.getUsername()))
             {
+                checkPatientDoesNotAlreadyExists(user.getPatients(), patient);
                 user.getPatients().add(patient);
             }
         }
         persistUsers();
+    }
+
+    public static void checkPatientDoesNotAlreadyExists(List<String> patient,String username) throws PatientAlreadyExistsExeption{
+        for(int i=0;i<patient.size();i++)
+        {
+            if(patient.get(i).equals(username))
+                throw new PatientAlreadyExistsExeption(username);
+        }
+    }
+
+    public static void deletePatients(String patient, String doctor) throws ThePatientDoesNotExistsExeption{
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername()))
+            {
+                checkPatientExists(user.getPatients(), patient);
+                user.getPatients().remove(patient);
+            }
+        }
+        persistUsers();
+    }
+
+    public static void checkPatientExists(List<String> patient,String username) throws ThePatientDoesNotExistsExeption{
+        boolean find=false;
+        for(int i=0;i<patient.size();i++) {
+            if (patient.get(i).equals(username)){
+                find=true;
+                break;
+            }
+        }
+        if(!find) throw new ThePatientDoesNotExistsExeption(username);
     }
 
     public static void checkCodeDoesNotAlreadyExist(String code) throws CodeAlreadyExist {
