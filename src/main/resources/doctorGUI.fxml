@@ -7,30 +7,32 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ffffff;"
-            xmlns="http://javafx.com/javafx/8.0.281"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="cbyyd_app.controllers.doctorGUIControllers">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
    <children>
-      <Button layoutX="207.0" layoutY="108.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="SEE PATIENTS" textFill="WHITE">
+      <Text fx:id="seePatientsMessage" />
+      <Button layoutX="207.0" layoutY="108.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="SEE PATIENTS" textFill="WHITE"
+      onAction="#seePatientsHandler">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font></Button>
 
-      <Text fx:id="managepatientMessage" />
-      <Button layoutX="207.0" layoutY="154.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="170.0" style="-fx-background-color: #111e6c;"
-              onAction="#managePatientsHandler" text="MANAGE PATIENTS" textFill="WHITE">
+      <Text fx:id="managepatientMessage" layoutX="401.0" layoutY="169.0" wrappingWidth="125.0" />
+      <Button layoutX="207.0" layoutY="154.0" mnemonicParsing="false" onAction="#managePatientsHandler" prefHeight="27.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="MANAGE PATIENTS" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Button>
 
-      <Button layoutX="207.0" layoutY="203.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="MANAGE TREATMENTS" textFill="WHITE">
+      <Text fx:id="manageTreatmentsMessage" layoutX="401.0" layoutY="222.0" wrappingWidth="125.0" />
+      <Button layoutX="207.0" layoutY="203.0" mnemonicParsing="false" onAction="#manageTreatmentsHandler" prefHeight="18.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="MANAGE TREATMENTS" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="207.0" layoutY="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="CREATE SCHEDULE" textFill="WHITE">
+
+      <Text fx:id="createScheduleMessage"/>
+      <Button layoutX="207.0" layoutY="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="CREATE SCHEDULE" textFill="WHITE"
+      onAction="#createScheduleHandler">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
