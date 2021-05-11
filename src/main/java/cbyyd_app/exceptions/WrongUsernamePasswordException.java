@@ -1,6 +1,6 @@
 package cbyyd_app.exceptions;
 
-public class WrongUsernamePasswordException extends Throwable {
+public class WrongUsernamePasswordException extends Exception {
     private String username;
     private String password;
 

@@ -3,7 +3,6 @@ package cbyyd_app.controllers;
 import cbyyd_app.exceptions.CodeAlreadyExist;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -12,13 +11,10 @@ import cbyyd_app.services.UserService;
 import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.exceptions.WrongUsernamePasswordException;
 
-import java.util.Objects;
-
-
 public class LoginRegistrationControllers {
 
-    @FXML
-    public Button Regbutton;
+    private static String usernameD;
+
     @FXML
     Text registrationMessage;
     @FXML
@@ -59,6 +55,7 @@ public class LoginRegistrationControllers {
                 }
             } else if (role.getValue().equals("Doctor")) {
                 try {
+                    usernameD=usernameField.getText();
                     loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -68,4 +65,9 @@ public class LoginRegistrationControllers {
             loginMessage.setText(e.getMessage());
         }
     }
+
+    public static String getUsernameD() {
+        return usernameD;
+    }
+
 }

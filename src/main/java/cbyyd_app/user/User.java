@@ -1,12 +1,21 @@
 package cbyyd_app.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User  {
+    private List<String> patients=new ArrayList<>();
     private String username;
     private String password;
     private String role;
     private String code;
 
-    public User() {
+    public User(){
+
+    }
+
+    public User(String username) {
+        this.username=username;
     }
 
     public User(String username, String password,String role,String code) {
@@ -74,14 +83,12 @@ public class User  {
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "UserDTO{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
-                ", code='" + code + '\'' +
-                '}';
+    public List<String> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(List<String> patients) {
+        this.patients = patients;
     }
 }
 

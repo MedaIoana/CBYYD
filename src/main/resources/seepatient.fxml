@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.seepatientControllers">
+   <children>
+      <ScrollBar layoutX="514.0" layoutY="131.0" orientation="VERTICAL" prefHeight="231.0" prefWidth="19.0" />
+      <ListView fx:id="list" layoutX="86.0" layoutY="131.0" prefHeight="231.0" prefWidth="428.0" />
+      <Label layoutX="208.0" layoutY="24.0" text="Your patients :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text fx:id="backMessage" layoutX="45.0" layoutY="15.0" wrappingWidth="284.00001525878906" />
+      <Button layoutY="2.0" mnemonicParsing="false" onAction="#BackHandler" text="🔙">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="308.0" fill="MAROON" layoutX="292.0" layoutY="89.0" startX="-292.0" stroke="BLACK" />
+   </children>
+</AnchorPane>
