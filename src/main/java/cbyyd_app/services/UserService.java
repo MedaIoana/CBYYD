@@ -1,12 +1,9 @@
 package cbyyd_app.services;
 
-import cbyyd_app.exceptions.CodeAlreadyExist;
-import cbyyd_app.exceptions.CouldNotWriteUserException;
-import cbyyd_app.exceptions.WrongUsernamePasswordException;
+import cbyyd_app.exceptions.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
-import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.user.User;
 
 import java.io.IOException;
@@ -15,11 +12,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class UserService {
     private static List<User> users;
+   // private  static List<String> empty;
     private static final Path USERS_PATH = FileService.getPathToFile("config", "users.json");
 
     public static void loadUsersFromFile() throws IOException {
@@ -40,6 +39,57 @@ public class UserService {
         users.add(new User(username,encodePassword(username,password),role,code));
         persistUsers();
     }
+    public static List<String> seePatients(String doctor){
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername()))
+            {
+                return user.getPatients();
+            }
+        }
+        return Collections.emptyList(); //empty
+    }
+
+    public static void addPatients(String patient, String doctor) throws PatientAlreadyExistsExeption{
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername()))
+            {
+                checkPatientDoesNotAlreadyExists(user.getPatients(), patient);
+                user.getPatients().add(patient);
+            }
+        }
+        persistUsers();
+    }
+
+    public static void checkPatientDoesNotAlreadyExists(List<String> patient,String username) throws PatientAlreadyExistsExeption{
+        for(int i=0;i<patient.size();i++)
+        {
+            if(patient.get(i).equals(username))
+                throw new PatientAlreadyExistsExeption(username);
+        }
+    }
+
+    public static void deletePatients(String patient, String doctor) throws ThePatientDoesNotExistsExeption{
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername()))
+            {
+                checkPatientExists(user.getPatients(), patient);
+                user.getPatients().remove(patient);
+            }
+        }
+        persistUsers();
+    }
+
+    public static void checkPatientExists(List<String> patient,String username) throws ThePatientDoesNotExistsExeption{
+        boolean find=false;
+        for(int i=0;i<patient.size();i++) {
+            if (patient.get(i).equals(username)){
+                find=true;
+                break;
+            }
+        }
+        if(!find) throw new ThePatientDoesNotExistsExeption(username);
+    }
+
     public static void checkCodeDoesNotAlreadyExist(String code) throws CodeAlreadyExist {
         for (User user : users) {
             if (Objects.equals(code, user.getCode()))
