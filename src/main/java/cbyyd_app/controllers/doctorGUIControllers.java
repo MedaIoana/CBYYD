@@ -61,4 +61,5 @@ public class doctorGUIControllers {
             createScheduleMessage.setText(e.getMessage());
         }
     }
+
 }
