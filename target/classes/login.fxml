@@ -56,7 +56,7 @@
           <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
     </ChoiceBox>
       
-          <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7">
+          <Text fx:id="registrationMessage" wrappingWidth="173.0" GridPane.columnIndex="0" GridPane.rowIndex="7">
             <font>
                <Font size="13.0" />
             </font></Text>
@@ -64,7 +64,10 @@
               <Button onAction="#handleRegisterAction" text="Register" />
           </HBox>
       
-          <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+          <Text fx:id="loginMessage" wrappingWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <font>
+               <Font size="13.0" />
+            </font></Text>
           <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
               <Button onAction="#handleLoginAction" text="Login" />
           </HBox>
