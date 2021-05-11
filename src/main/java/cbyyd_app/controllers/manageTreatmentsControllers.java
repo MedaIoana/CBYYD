@@ -16,12 +16,12 @@ public class manageTreatmentsControllers {
     @FXML
     private TextField username;
 
-    @FXML
-    public void username() {
+   // @FXML
+   /* public void username() {
         try{
-            UserService.checkUserExist(username);
+            UserService.checkPatientExist(username);
         }catch (patientNotExist e){
             e.printStackTrace();
         }
-    }
+    }*/
 }
