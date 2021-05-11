@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.281"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="CreateSchedule"
+            fx:controller="cbyyd_app.controllers.createDoctorScheduleControllers"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>

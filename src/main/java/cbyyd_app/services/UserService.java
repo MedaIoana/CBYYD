@@ -3,9 +3,11 @@ package cbyyd_app.services;
 import cbyyd_app.exceptions.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.scene.control.TextField;
 import org.apache.commons.io.FileUtils;
 import cbyyd_app.user.User;
 
+import java.awt.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -20,7 +22,6 @@ public class UserService {
     private static List<User> users;
    // private  static List<String> empty;
     private static final Path USERS_PATH = FileService.getPathToFile("config", "users.json");
-
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
@@ -114,6 +115,7 @@ public class UserService {
                 throw new UsernameAlreadyExistsException(username);
         }
     }
+
     static void persistUsers() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
