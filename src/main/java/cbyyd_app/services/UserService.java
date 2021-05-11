@@ -12,11 +12,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class UserService {
     private static List<User> users;
+   // private  static List<String> empty;
     private static final Path USERS_PATH = FileService.getPathToFile("config", "users.json");
 
     public static void loadUsersFromFile() throws IOException {
@@ -36,6 +38,15 @@ public class UserService {
         checkCodeDoesNotAlreadyExist(code);
         users.add(new User(username,encodePassword(username,password),role,code));
         persistUsers();
+    }
+    public static List<String> seePatients(String doctor){
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername()))
+            {
+                return user.getPatients();
+            }
+        }
+        return Collections.emptyList(); //empty
     }
 
     public static void addPatients(String patient, String doctor) throws PatientAlreadyExistsExeption{
