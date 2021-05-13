@@ -51,12 +51,24 @@ public class UserService {
         for (User user : users) {
             if (Objects.equals(doctor, user.getUsername()))
             {
-            //    checkPatientExistsAsUser(patient);
+                checkPatientExistsAsUser(patient);
                 checkPatientDoesNotAlreadyExists(user.getPatients(), patient);
                 user.getPatients().add(patient);
             }
         }
         persistUsers();
+    }
+    public static void checkPatientExistsAsUser(String username) throws PatientDoesNotExistsAsUser {
+        boolean find=false;
+        for (User user : users) {
+            if(user.getRole().equals("Patient")) {
+                if (Objects.equals(username, user.getUsername())) {
+                    find = true;
+                    break;
+                }
+            }
+        }
+        if(!find) throw new PatientDoesNotExistsAsUser(username);
     }
 
     public static void checkPatientDoesNotAlreadyExists(List<String> patient,String username) throws PatientAlreadyExistsExeption{
