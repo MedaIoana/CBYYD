@@ -36,8 +36,11 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button layoutX="524.0" layoutY="351.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: #111e6c;" text="EDIT" textFill="WHITE" />
-        <Button layoutX="459.0" layoutY="351.0" mnemonicParsing="false" style="-fx-background-color: #111e6c;" text="BACK" textFill="WHITE" />
+        <Text fx:id="editMessage"/>
+        <Button layoutX="524.0" layoutY="351.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: #111e6c;" text="EDIT" textFill="WHITE" onAction="#editHandler"/>
+
+       <Text fx:id="backMessage"/>
+        <Button layoutX="459.0" layoutY="351.0" mnemonicParsing="false" style="-fx-background-color: #111e6c;" text="BACK" textFill="WHITE" onAction="#backHandler"/>
         <ListView layoutX="140.0" layoutY="168.0" prefHeight="177.0" prefWidth="447.0" />
     </children>
 

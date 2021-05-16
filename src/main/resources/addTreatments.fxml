@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.addTreatmentsControllers">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.addTreatmentsControllers">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="400.0" stroke="BLACK" strokeType="INSIDE" width="42.0" />
       <Circle fill="#111e6c" layoutX="88.0" layoutY="245.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
@@ -31,6 +28,12 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextArea layoutX="142.0" layoutY="145.0" prefHeight="196.0" prefWidth="392.0" />
+      <TextArea fx:id="treatment" layoutX="142.0" layoutY="145.0" prefHeight="196.0" prefWidth="392.0" />
+      <Text fx:id="backMessage" layoutX="152.0" layoutY="377.0" wrappingWidth="133.0" />
+      <Button layoutX="428.0" layoutY="351.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #111e6c;" text="BACK" textFill="WHITE" />
+
+      <Text fx:id="addMessage" layoutX="387.0" layoutY="136.0" wrappingWidth="147.0" />
+      <Button layoutX="494.0" layoutY="351.0" mnemonicParsing="false" onAction="#addHandler" style="-fx-background-color: #111e6c;" text="ADD" textFill="#fcfcfc" />
+      <TextField layoutX="212.0" layoutY="55.0" />
    </children>
 </AnchorPane>

@@ -1,6 +1,12 @@
 package cbyyd_app.services;
 
 import cbyyd_app.exceptions.*;
+
+import cbyyd_app.exceptions.CodeAlreadyExist;
+import cbyyd_app.exceptions.CouldNotWriteUserException;
+import cbyyd_app.exceptions.WrongUsernamePasswordException;
+import cbyyd_app.exceptions.CodeAlreadyExist;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -47,6 +53,18 @@ public class UserService {
         return Collections.emptyList();
     }
 
+    public static List<String> seeTreatments(String patient)
+    {
+        for(User user:users)
+        {
+            if(Objects.equals(patient,user.getUsername()))
+            {
+                return user.getTreatments();
+            }
+        }
+        return Collections.emptyList();
+    }
+
     public static void addPatients(String patient, String doctor) throws PatientAlreadyExistsExeption, PatientDoesNotExistsAsUser {
         for (User user : users) {
             if (Objects.equals(doctor, user.getUsername()))
@@ -58,6 +76,42 @@ public class UserService {
         }
         persistUsers();
     }
+
+    public static void addTreatments(String patient,String treatment) throws PatientDoesNotExistsAsUser {
+        for (User user : users) {
+            if(Objects.equals(patient,user.getUsername()))
+            {
+                checkPatientExistsAsUser(patient);
+                user.getTreatments().add(treatment);
+            }
+        }
+        persistUsers();
+    }
+
+    public static void editTreatments(String patient, String treatment) throws PatientDoesNotExistsAsUser
+    {
+        for (User user : users) {
+            if(Objects.equals(patient,user.getUsername()))
+            {
+                checkPatientExistsAsUser(patient);
+
+            }
+        }
+        persistUsers();
+    }
+
+    public static void deleteTreatment(String patient, String treatment) throws PatientDoesNotExistsAsUser
+    {
+        for (User user : users) {
+            if(Objects.equals(patient,user.getUsername()))
+            {
+                checkPatientExistsAsUser(patient);
+                user.getTreatments().remove(treatment);
+            }
+        }
+        persistUsers();
+    }
+
     public static void checkPatientExistsAsUser(String username) throws PatientDoesNotExistsAsUser {
         boolean find=false;
         for (User user : users) {

@@ -1,25 +1,48 @@
 package cbyyd_app.controllers;
 
+import cbyyd_app.services.UserService;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import static cbyyd_app.services.UserService.addTreatments;
+
 public class addTreatmentsControllers {
 
+    @FXML
+    Text backMessage;
 
-    public static void FileClear(String FileName) throws IOException {
-        FileWriter fstream = new FileWriter(FileName,true);
-        BufferedWriter out = new BufferedWriter(fstream);
-        out.write("");
+    @FXML
+    Text addMessage;
+
+    @FXML
+    TextArea treatment;
+
+    @FXML
+    public void backHandler() {
+        try {
+            backMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/manageTreatments.fxml")));
+        } catch (Exception e) {
+            backMessage.setText(e.getMessage());
+        }
     }
 
-    public static void FileWriters(String FileName, String Content) throws IOException
+    @FXML
+    public void addHandler()
     {
-        FileWriter fstream = new FileWriter(FileName,true);
-        BufferedWriter out = new BufferedWriter(fstream);
-        out.append(Content);
-        out.newLine();
-
+        try {
+            addTreatments(manageTreatmentsControllers.getUsernameP(),treatment.getText());
+            addMessage.setText("The treatment was added");
+        }
+        catch (Exception e)
+        {
+            addMessage.setText(e.getMessage());
+        }
     }
 
 }

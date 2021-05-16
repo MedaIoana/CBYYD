@@ -38,7 +38,7 @@
       <font>
          <Font size="14.0" />
       </font></Text>
-   <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHAndler" style="-fx-background-color: #FFFFFF;" text="🔙">
+   <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #FFFFFF;" text="🔙">
       <font>
          <Font size="24.0" />
       </font>
