@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.managingpatientControllers">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.manageTreatmentsControllers">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="46.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
         <Text fill="WHITE" layoutX="203.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage patients">
@@ -27,27 +24,39 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <TextField layoutX="169.0" layoutY="162.0" prefHeight="24.0" prefWidth="262.0" />
+        <TextField fx:id="username" layoutX="169.0" layoutY="162.0" prefHeight="24.0" prefWidth="262.0" />
       <Text layoutX="125.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What do you want to do?" wrappingWidth="361.82421875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="69.0" layoutY="267.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="ADD" textFill="WHITE">
+
+        <Text fx:id="addMessage" />
+      <Button layoutX="69.0" layoutY="267.0" mnemonicParsing="false" onAction="#addHandler" prefHeight="28.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="ADD" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="244.0" layoutY="267.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="EDIT" textFill="WHITE">
+
+   <Text fx:id="editMessage" />
+      <Button layoutX="244.0" layoutY="267.0" mnemonicParsing="false" onAction="#editHandler" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="EDIT" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="418.0" layoutY="267.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="DELETE" textFill="WHITE">
+
+        <Text fx:id="deleteMessage" />
+      <Button layoutX="418.0" layoutY="267.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="DELETE" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+        <Text fx:id="backMessage" layoutX="45.0" layoutY="15.0" wrappingWidth="284.00001525878906" />
+        <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" text="🔙">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
     </children>
 
 </AnchorPane>

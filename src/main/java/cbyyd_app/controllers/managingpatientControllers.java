@@ -41,7 +41,7 @@ public class managingpatientControllers {
     }
 
     @FXML
-    public void backHAndler() {
+    public void backHandler() {
         try {
             backMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
         } catch (Exception e) {
