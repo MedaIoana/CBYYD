@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.281"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="cbyyd_app.controllers.createDoctorScheduleControllers"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.createDoctorScheduleControllers">
+   <children>
+       <Text fx:id="backMessage" layoutY="56.0" wrappingWidth="284.00001525878906" />
+      <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #FFFFFF;" text="🔙">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+       <TableView fx:id="tableView" layoutX="13.0" layoutY="61.0" prefHeight="279.0" prefWidth="725.0">
+           <columns>
+               <TableColumn fx:id="hoursCollumn" prefWidth="70.0" text="Hours" />
+               <TableColumn fx:id="MondayCollumn" prefWidth="130.0" text="Monday" />
+               <TableColumn fx:id="TuesdayCollumn" prefWidth="130.0" text="Tuesday" />
+               <TableColumn fx:id="WednesdayCollumn" prefWidth="130.0" text="Wednesday" />
+               <TableColumn fx:id="ThursdayCollumn" prefWidth="130.0" text="Thursday" />
+               <TableColumn fx:id="FridayCollumn" prefWidth="130.0" text="Friday" />
+           </columns>
+       </TableView>
+       <Label layoutX="51.0" layoutY="6.0" prefHeight="37.0" prefWidth="685.0" style="-fx-background-color: #111e6c;" text="                                 Create Your Schedule " textFill="WHITE">
+           <font>
+               <Font name="Arimo" size="24.0" />
+           </font>
+       </Label>
+       <Text fx:id="saveMessage" layoutX="13.0" layoutY="371.0" wrappingWidth="593.0000152587891">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Button layoutX="607.0" layoutY="347.0" mnemonicParsing="false" onAction="#saveHandler" style="-fx-background-color: #5ABA8A;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

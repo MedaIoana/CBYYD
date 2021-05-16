@@ -1,6 +1,7 @@
 package cbyyd_app.controllers;
 
 import cbyyd_app.exceptions.PatientAlreadyExistsExeption;
+import cbyyd_app.exceptions.PatientDoesNotExistsAsUser;
 import cbyyd_app.exceptions.ThePatientDoesNotExistsExeption;
 import cbyyd_app.services.UserService;
 import javafx.fxml.FXML;
@@ -24,7 +25,7 @@ public class managingpatientControllers {
         try {
             UserService.addPatients(usernameField.getText(),LoginRegistrationControllers.getUsernameD());
             addingMessage.setText("The patient was added successfully!");
-        } catch (PatientAlreadyExistsExeption e) {
+        } catch (PatientAlreadyExistsExeption | PatientDoesNotExistsAsUser e) {
             addingMessage.setText(e.getMessage());
         }
     }
@@ -40,7 +41,7 @@ public class managingpatientControllers {
     }
 
     @FXML
-    public void backHAndler() {
+    public void backHandler() {
         try {
             backMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/doctorGUI.fxml")));
         } catch (Exception e) {

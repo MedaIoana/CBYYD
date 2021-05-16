@@ -5,13 +5,14 @@ import java.util.List;
 
 public class User  {
     private List<String> patients=new ArrayList<>();
+    private List<String> treatments=new ArrayList<>();
+    private List<Week> schedule=new ArrayList<>();
     private String username;
     private String password;
     private String role;
     private String code;
 
     public User(){
-
     }
 
     public User(String username) {
@@ -90,6 +91,19 @@ public class User  {
     public void setPatients(List<String> patients) {
         this.patients = patients;
     }
+
+    public List<String> getTreatments() {
+        return treatments;
+    }
+
+    public void setTreatments(List<String> treatments) {
+        this.treatments = treatments;
+    }
+
+    public List<Week> getSchedule() { return schedule; }
+
+    public void setSchedule(List<Week> schedule) { this.schedule = schedule; }
+
 }
 
 
