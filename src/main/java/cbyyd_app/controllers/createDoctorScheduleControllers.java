@@ -1,5 +1,6 @@
 package cbyyd_app.controllers;
 
+import cbyyd_app.services.UserService;
 import cbyyd_app.user.Week;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,9 +14,13 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class createDoctorScheduleControllers implements Initializable {
+
+    @FXML
+    Text saveMessage;
 
     @FXML
     Text backMessage;
@@ -37,9 +42,10 @@ public class createDoctorScheduleControllers implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       // tableView.setItems(getWeek());
+        int many=UserService.manySchedule(LoginRegistrationControllers.getUsernameD());
+        if(many==0) loadSchedule();
+        else tableView.getItems().addAll(UserService.seeSchedule(LoginRegistrationControllers.getUsernameD()));
         initTable();
-        loadSchedule();
     }
 
     private void initTable(){
@@ -60,7 +66,7 @@ public class createDoctorScheduleControllers implements Initializable {
     private void editableCols() {
         hoursCollumn.setCellFactory(TextFieldTableCell.forTableColumn());
         hoursCollumn.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setMonday(e.getNewValue());
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setHours(e.getNewValue());
         });
 
         MondayCollumn.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -70,22 +76,22 @@ public class createDoctorScheduleControllers implements Initializable {
 
         TuesdayCollumn.setCellFactory(TextFieldTableCell.forTableColumn());
         TuesdayCollumn.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setMonday(e.getNewValue());
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setTuesday(e.getNewValue());
         });
 
         WednesdayCollumn.setCellFactory(TextFieldTableCell.forTableColumn());
         WednesdayCollumn.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setMonday(e.getNewValue());
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setWednesday(e.getNewValue());
         });
 
         ThursdayCollumn.setCellFactory(TextFieldTableCell.forTableColumn());
         ThursdayCollumn.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setMonday(e.getNewValue());
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setThursday(e.getNewValue());
         });
 
         FridayCollumn.setCellFactory(TextFieldTableCell.forTableColumn());
         FridayCollumn.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setMonday(e.getNewValue());
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setFriday(e.getNewValue());
         });
 
         tableView.setEditable(true);
@@ -109,4 +115,12 @@ public class createDoctorScheduleControllers implements Initializable {
         }
     }
 
+    public void saveHandler() {
+        try{
+            UserService.saveSchedule(LoginRegistrationControllers.getUsernameD(), tableView.getItems());
+            saveMessage.setText("The schedule was saved successfully!");
+        } catch (Exception e) {
+            saveMessage.setText(e.getMessage());
+        }
+    }
 }

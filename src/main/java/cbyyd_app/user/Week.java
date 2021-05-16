@@ -13,7 +13,6 @@ public class Week {
     Button update;
 
     public Week(){
-
     }
 
     public Week(String hours, String Monday, String Tuesday, String Wednesday, String Thursday, String Friday) {
@@ -37,9 +36,7 @@ public class Week {
         return Monday;
     }
 
-    public void setMonday(String monday) {
-        Monday = monday;
-    }
+    public void setMonday(String monday) { Monday = monday; }
 
     public String getTuesday() {
         return Tuesday;
