@@ -16,6 +16,9 @@ public class patientGUIControllers {
     Text logoutMessage;
 
     @FXML
+    Text mySchedule;
+
+    @FXML
     public void DoctorScheduleHandler() {
         try {
             seeDoctorScheduleMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/seeDoctorSchedule.fxml")));
@@ -36,7 +39,11 @@ public class patientGUIControllers {
 
     @FXML
     public void ScheduleHandler() {
-
+        try {
+            mySchedule.getScene().setRoot(FXMLLoader.load(getClass().getResource("/createPatientSchedule.fxml")));
+        } catch (Exception e) {
+            mySchedule.setText(e.getMessage());
+        }
     }
 
     public void logoutHandler() {

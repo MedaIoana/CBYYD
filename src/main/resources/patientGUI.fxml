@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="411.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.patientGUIControllers">
+<AnchorPane prefHeight="411.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.patientGUIControllers">
    <children>
       <Label layoutX="231.0" layoutY="4.0" text="Choose your option :">
          <font>
@@ -30,6 +30,7 @@
             <Font name="Arial Black" size="18.0" />
          </font>
       </Button>
+      <Text fx:id="mySchedule" layoutX="440.0" layoutY="315.0" wrappingWidth="125.0" />
       <Button layoutX="264.0" layoutY="282.0" mnemonicParsing="false" onAction="#ScheduleHandler" style="-fx-background-color: #FF7F50;" text="MY SHEDULE">
          <font>
             <Font name="Arial Black" size="18.0" />
