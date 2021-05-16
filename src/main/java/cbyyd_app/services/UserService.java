@@ -1,5 +1,6 @@
 package cbyyd_app.services;
 
+import cbyyd_app.controllers.LoginRegistrationControllers;
 import cbyyd_app.exceptions.*;
 import cbyyd_app.exceptions.CodeAlreadyExist;
 import cbyyd_app.exceptions.CouldNotWriteUserException;
@@ -72,12 +73,32 @@ public class UserService {
         return Collections.emptyList();
     }
 
+    public static void rememberDoctor(String patient){
+        for (User user : users) {
+            if (Objects.equals(patient, user.getUsername()))
+            {
+                user.setYourDoctor(LoginRegistrationControllers.getUsernameD());
+            }
+        }
+    }
+
+    public static String getMyDoctor(String patient){
+        for (User user : users) {
+            if (Objects.equals(patient, user.getUsername()))
+            {
+                return user.getYourDoctor();
+            }
+        }
+        return "";
+    }
+
     public static void addPatients(String patient, String doctor) throws PatientAlreadyExistsExeption, PatientDoesNotExistsAsUser {
         for (User user : users) {
             if (Objects.equals(doctor, user.getUsername()))
             {
                 checkPatientExistsAsUser(patient);
                 checkPatientDoesNotAlreadyExists(user.getPatients(), patient);
+                rememberDoctor(patient);
                 user.getPatients().add(patient);
             }
         }

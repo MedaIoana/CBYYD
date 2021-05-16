@@ -14,6 +14,7 @@ import cbyyd_app.exceptions.WrongUsernamePasswordException;
 public class LoginRegistrationControllers {
 
     private static String usernameD;
+    private static String usernameP;
 
     @FXML
     Text registrationMessage;
@@ -27,6 +28,10 @@ public class LoginRegistrationControllers {
     private TextField usernameField;
     @FXML
     private ChoiceBox<String> role;
+
+    public static String getUsernameP() { return usernameP; }
+
+    public static void setUsernameP(String usernameP) { LoginRegistrationControllers.usernameP = usernameP; }
 
     @FXML
     public void initialize() {
@@ -49,6 +54,7 @@ public class LoginRegistrationControllers {
             UserService.checkUsernameAndPassword(usernameField.getText(),passwordField.getText());
             if (role.getValue().equals("Patient")) {
                 try {
+                    usernameP=usernameField.getText();
                     loginMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/patientGUI.fxml")));
                 } catch (Exception e) {
                     e.printStackTrace();

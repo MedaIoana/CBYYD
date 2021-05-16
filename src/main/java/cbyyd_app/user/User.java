@@ -7,6 +7,7 @@ public class User  {
     private List<String> patients=new ArrayList<>();
     private List<String> treatments=new ArrayList<>();
     private List<Week> schedule=new ArrayList<>();
+    private String yourDoctor;
     private String username;
     private String password;
     private String role;
@@ -104,6 +105,9 @@ public class User  {
 
     public void setSchedule(List<Week> schedule) { this.schedule = schedule; }
 
+    public String getYourDoctor() { return yourDoctor; }
+
+    public void setYourDoctor(String yourDoctor) { this.yourDoctor = yourDoctor; }
 }
 
 
