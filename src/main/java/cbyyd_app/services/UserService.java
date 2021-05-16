@@ -1,6 +1,12 @@
 package cbyyd_app.services;
 
 import cbyyd_app.exceptions.*;
+
+import cbyyd_app.exceptions.CodeAlreadyExist;
+import cbyyd_app.exceptions.CouldNotWriteUserException;
+import cbyyd_app.exceptions.WrongUsernamePasswordException;
+import cbyyd_app.exceptions.CodeAlreadyExist;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
