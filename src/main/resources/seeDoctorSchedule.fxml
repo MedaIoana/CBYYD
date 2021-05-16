@@ -4,27 +4,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.seeDoctorScheduleControllers">
+<AnchorPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.seeDoctorScheduleControllers">
    <children>
-       <Text fx:id="backMessage" layoutX="42.0" layoutY="37.0" wrappingWidth="284.00001525878906">
+       <Text fx:id="backMessage" layoutX="7.0" layoutY="56.0" wrappingWidth="284.00001525878906">
            <font>
                <Font size="14.0" />
            </font></Text>
-      <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #FFFFFF;" text="🔙">
+      <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #FFFFF8;" text="🔙">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <TableView layoutX="31.0" layoutY="47.0" prefHeight="345.0" prefWidth="569.0">
+      <TableView fx:id="tableView" layoutX="13.0" layoutY="59.0" prefHeight="299.0" prefWidth="724.0">
         <columns>
-          <TableColumn text="Hours" />
-          <TableColumn prefWidth="91.0" text="Monday" />
-            <TableColumn prefWidth="98.0" text="Tuesday" />
-            <TableColumn minWidth="0.0" prefWidth="101.0" text="Wednesday" />
-            <TableColumn prefWidth="101.0" text="Thursday" />
-            <TableColumn prefWidth="97.0" text="Friday" />
+          <TableColumn fx:id="hoursCollumn" prefWidth="70.0" text="Hours" />
+          <TableColumn fx:id="MondayCollumn" prefWidth="130.0" text="Monday" />
+            <TableColumn fx:id="TuesdayCollumn" prefWidth="130.0" text="Tuesday" />
+            <TableColumn fx:id="WednesdayCollumn" minWidth="0.0" prefWidth="130.0" text="Wednesday" />
+            <TableColumn fx:id="ThursdayCollumn" prefWidth="130.0" text="Thursday" />
+            <TableColumn fx:id="FridayCollumn" prefWidth="130.0" text="Friday" />
         </columns>
       </TableView>
-      <Label layoutX="43.0" layoutY="3.0" prefHeight="37.0" prefWidth="557.0" style="-fx-background-color: #E74C3C;" text="                Your Doctor Schedule ">
+      <Label layoutX="42.0" layoutY="3.0" prefHeight="37.0" prefWidth="691.0" style="-fx-background-color: #E74C3C;" text="                        Your Doctor Schedule ">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>
