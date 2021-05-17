@@ -32,7 +32,11 @@ public class patientGUIControllers {
 
     @FXML
     public void TreatementsTestsHandler() {
-
+        try {
+            seeTreatmentsMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/seeTreatments.fxml")));
+        } catch (Exception e) {
+            seeTreatmentsMessage.setText(e.getMessage());
+        }
     }
 
     @FXML
