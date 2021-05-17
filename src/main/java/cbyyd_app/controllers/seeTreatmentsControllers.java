@@ -26,7 +26,7 @@ public class seeTreatmentsControllers implements Initializable {
     @FXML
     public void BackHandler() {
         try {
-            backMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/managingpatientsGUI.fxml")));
+            backMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/patientGUI.fxml")));
         } catch (Exception e) {
             backMessage.setText(e.getMessage());
         }
