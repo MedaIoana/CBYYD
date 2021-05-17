@@ -41,8 +41,12 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(),codeField.getText());
-            registrationMessage.setText("Account created successfully!");
+            boolean empty=role.getSelectionModel().isEmpty();
+            if(empty) registrationMessage.setText("You must select a mode!");
+            else {
+                UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(), codeField.getText());
+                registrationMessage.setText("Account created successfully!");
+            }
         } catch (UsernameAlreadyExistsException | CodeAlreadyExist e) {
             registrationMessage.setText(e.getMessage());
         }

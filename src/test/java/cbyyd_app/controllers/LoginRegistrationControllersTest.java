@@ -2,6 +2,8 @@ package cbyyd_app.controllers;
 
 import cbyyd_app.services.FileService;
 import cbyyd_app.services.UserService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -17,7 +19,9 @@ import static org.junit.Assert.assertEquals;
 public class LoginRegistrationControllersTest extends ApplicationTest{
 
     public static final String TEST_USER = "testUser";
-    public static final String TEST_PASSWORD = "testPassword";
+    public static final String TEST_PASSWORD ="testPassword";
+    public static final String TEST_CHIOCE="Patient";
+    public static final String TEST_CODE="5366";
     private LoginRegistrationControllers controller;
 
     @BeforeClass
@@ -31,6 +35,7 @@ public class LoginRegistrationControllersTest extends ApplicationTest{
     public void setUp() throws Exception{
         FileUtils.cleanDirectory(FileService.getApplicationHomePath().toFile());
         UserService.loadUsersFromFile();
+        ObservableList<String> cursors = FXCollections.observableArrayList("Patient","Doctor");
 
         controller=new LoginRegistrationControllers();
         controller.usernameField=new TextField();
@@ -42,6 +47,9 @@ public class LoginRegistrationControllersTest extends ApplicationTest{
 
         controller.passwordField.setText(TEST_PASSWORD);
         controller.usernameField.setText(TEST_USER);
+        controller.role.setItems(cursors);
+        controller.role.setValue(TEST_CHIOCE);
+        controller.codeField.setText(TEST_CODE);
     }
 
     @Test
@@ -52,9 +60,16 @@ public class LoginRegistrationControllersTest extends ApplicationTest{
     }
 
     @Test
-    private void testAddSameUserTwice(){
+    public void testAddSameUserTwice(){
         controller.handleRegisterAction();
         controller.handleRegisterAction();
-        assertEquals("An account with the username " +TEST_USER+ " already exists!",controller.registrationMessage.getText());
+        assertEquals("An account with the username " + TEST_USER + " already exists!",controller.registrationMessage.getText());
     }
+
+    @Test
+    public void testUsernamePassword(){
+        controller.handleLoginAction();
+
+    }
+
 }
