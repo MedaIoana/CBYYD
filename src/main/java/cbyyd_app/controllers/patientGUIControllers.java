@@ -19,6 +19,9 @@ public class patientGUIControllers {
     Text mySchedule;
 
     @FXML
+    Text makeAppointmentMessage;
+
+    @FXML
     public void DoctorScheduleHandler() {
         try {
             seeDoctorScheduleMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/seeDoctorSchedule.fxml")));
@@ -29,12 +32,20 @@ public class patientGUIControllers {
 
     @FXML
     public void TreatementsTestsHandler() {
-
+        try {
+            seeTreatmentsMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/seeTreatments.fxml")));
+        } catch (Exception e) {
+            seeTreatmentsMessage.setText(e.getMessage());
+        }
     }
 
     @FXML
     public void AppointmentHandler() {
-
+        try {
+            makeAppointmentMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/makeAppointment.fxml")));
+        } catch (Exception e) {
+            makeAppointmentMessage.setText(e.getMessage());
+        }
     }
 
     @FXML

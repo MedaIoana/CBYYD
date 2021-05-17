@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
+<AnchorPane prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
    <children>
       <Text fx:id="seePatientsMessage" />
-      <Button layoutX="207.0" layoutY="108.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="SEE PATIENTS" textFill="WHITE"
-      onAction="#seePatientsHandler">
+      <Button layoutX="207.0" layoutY="108.0" mnemonicParsing="false" onAction="#seePatientsHandler" prefHeight="24.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="SEE PATIENTS" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font></Button>
@@ -30,9 +28,8 @@
          </font>
       </Button>
 
-      <Text fx:id="createScheduleMessage"/>
-      <Button layoutX="207.0" layoutY="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="CREATE SCHEDULE" textFill="WHITE"
-      onAction="#createScheduleHandler">
+      <Text fx:id="createScheduleMessage" />
+      <Button layoutX="207.0" layoutY="252.0" mnemonicParsing="false" onAction="#createScheduleHandler" prefHeight="27.0" prefWidth="170.0" style="-fx-background-color: #111e6c;" text="CREATE SCHEDULE" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
@@ -42,7 +39,7 @@
             <Font name="Webdings" size="18.0" />
          </font>
       </Text>
-      <ImageView fitHeight="33.0" fitWidth="53.0" layoutX="584.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="33.0" fitWidth="53.0" layoutX="697.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/doctor.jpg" />
          </image>
@@ -72,13 +69,13 @@
             <Font name="Apple Braille" size="11.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="18.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="634.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="18.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="750.0" />
       <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="79.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/glob.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="572.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="12.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="409.0" layoutX="685.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="12.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="559.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="2.0" />
       <Circle fill="#111e6c" layoutX="554.0" layoutY="79.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="399.9" layoutX="552.0" stroke="BLACK" strokeType="INSIDE" width="2.0" />
@@ -91,5 +88,8 @@
       <Circle fill="#111e6c" layoutX="559.0" layoutY="301.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#111e6c" layoutX="553.0" layoutY="340.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#111e6c" layoutX="559.0" layoutY="388.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="logoutMessage"/>
+      <Button  layoutX="14.0" layoutY="9.0" mnemonicParsing="false" text="Log out" onAction="#logoutHandler">
+      </Button>
    </children>
 </AnchorPane>

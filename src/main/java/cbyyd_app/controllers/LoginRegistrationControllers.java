@@ -21,13 +21,13 @@ public class LoginRegistrationControllers {
     @FXML
     Text loginMessage;
     @FXML
-    private PasswordField passwordField;
+    PasswordField passwordField;
     @FXML
-    private TextField codeField;
+    TextField codeField;
     @FXML
-    private TextField usernameField;
+    TextField usernameField;
     @FXML
-    private ChoiceBox<String> role;
+    ChoiceBox<String> role;
 
     public static String getUsernameP() { return usernameP; }
 
@@ -41,8 +41,12 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(),codeField.getText());
-            registrationMessage.setText("Account created successfully!");
+            boolean empty=role.getSelectionModel().isEmpty();
+            if(empty) registrationMessage.setText("You must select a mode!");
+            else {
+                UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue(), codeField.getText());
+                registrationMessage.setText("Account created successfully!");
+            }
         } catch (UsernameAlreadyExistsException | CodeAlreadyExist e) {
             registrationMessage.setText(e.getMessage());
         }

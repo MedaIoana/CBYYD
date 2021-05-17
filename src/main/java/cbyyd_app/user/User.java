@@ -93,13 +93,6 @@ public class User  {
         this.patients = patients;
     }
 
-    public List<String> getTreatments() {
-        return treatments;
-    }
-
-    public void setTreatments(List<String> treatments) {
-        this.treatments = treatments;
-    }
 
     public List<Week> getSchedule() { return schedule; }
 
@@ -108,6 +101,14 @@ public class User  {
     public String getYourDoctor() { return yourDoctor; }
 
     public void setYourDoctor(String yourDoctor) { this.yourDoctor = yourDoctor; }
+
+    public List<String> getTreatments() {
+        return treatments;
+    }
+
+    public void setTreatments(List<String> treatments) {
+        this.treatments = treatments;
+    }
 }
 
 

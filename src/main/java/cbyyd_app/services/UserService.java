@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class UserService {
-    private static List<User> users;
-    private static final Path USERS_PATH = FileService.getPathToFile("config", "users.json");
+    static List<User> users;
+    static final Path USERS_PATH = FileService.getPathToFile("config", "users.json");
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
@@ -57,6 +57,7 @@ public class UserService {
         {
             if(Objects.equals(patient,user.getUsername()))
             {
+                System.out.println(user.getTreatments());
                 return user.getTreatments();
             }
         }
@@ -137,24 +138,27 @@ public class UserService {
         return 0;
     }
 
-    public static void editTreatments(String patient, String treatment) throws PatientDoesNotExistsAsUser
+    public static void editTreatments(String patient, List<String> treatment) throws PatientDoesNotExistsAsUser
     {
         for (User user : users) {
             if(Objects.equals(patient,user.getUsername()))
             {
                 checkPatientExistsAsUser(patient);
+                user.setTreatments(treatment);
             }
         }
         persistUsers();
     }
 
-    public static void deleteTreatment(String patient, String treatment) throws PatientDoesNotExistsAsUser
+    public static void deleteTreatment(String patient, List<String> treatment) throws PatientDoesNotExistsAsUser
     {
         for (User user : users) {
             if(Objects.equals(patient,user.getUsername()))
             {
                 checkPatientExistsAsUser(patient);
-                user.getTreatments().remove(treatment);
+                user.setTreatments(treatment);
+                System.out.println(user.getTreatments());
+
             }
         }
         persistUsers();
