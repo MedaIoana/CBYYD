@@ -21,13 +21,13 @@ public class LoginRegistrationControllers {
     @FXML
     Text loginMessage;
     @FXML
-    private PasswordField passwordField;
+    PasswordField passwordField;
     @FXML
-    private TextField codeField;
+    TextField codeField;
     @FXML
-    private TextField usernameField;
+    TextField usernameField;
     @FXML
-    private ChoiceBox<String> role;
+    ChoiceBox<String> role;
 
     public static String getUsernameP() { return usernameP; }
 

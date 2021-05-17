@@ -14,17 +14,14 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class createDoctorScheduleControllers implements Initializable {
 
     @FXML
     Text saveMessage;
-
     @FXML
     Text backMessage;
-
     @FXML
     private TableView<Week> tableView;
     @FXML
