@@ -31,21 +31,21 @@
          </font>
       </Text>
 
-        <Text fx:id="addMessage" />
+        <Text fx:id="addMessage" layoutX="80.0" layoutY="329.0" wrappingWidth="90.0" />
       <Button layoutX="69.0" layoutY="267.0" mnemonicParsing="false" onAction="#addHandler" prefHeight="28.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="ADD" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
 
-   <Text fx:id="editMessage" />
+   <Text fx:id="editMessage" layoutX="442.0" layoutY="138.0" wrappingWidth="90.0" />
       <Button layoutX="244.0" layoutY="267.0" mnemonicParsing="false" onAction="#editHandler" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="EDIT" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
 
-        <Text fx:id="deleteMessage" />
+        <Text fx:id="deleteMessage" layoutX="399.0" layoutY="329.0" wrappingWidth="123.0" />
       <Button layoutX="418.0" layoutY="267.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #111e6c;" text="DELETE" textFill="WHITE">
          <font>
             <Font size="18.0" />

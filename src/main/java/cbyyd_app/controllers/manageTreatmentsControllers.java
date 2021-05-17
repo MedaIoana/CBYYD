@@ -1,5 +1,6 @@
 package cbyyd_app.controllers;
 
+import cbyyd_app.exceptions.ThePatientDoesNotExistsExeption;
 import cbyyd_app.exceptions.UsernameAlreadyExistsException;
 import cbyyd_app.exceptions.WrongUsernamePasswordException;
 import cbyyd_app.exceptions.patientNotExist;
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class manageTreatmentsControllers {
@@ -45,11 +47,14 @@ public class manageTreatmentsControllers {
     {
         try{
             usernameP=username.getText();
+            UserService.checkPatientExistsInDoctorList(UserService.seePatients(LoginRegistrationControllers.getUsernameD()),usernameP);
             addMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/addTreatments.fxml")));
         }
-        catch (Exception e)
+        catch (ThePatientDoesNotExistsExeption e)
         {
             addMessage.setText(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -59,6 +64,7 @@ public class manageTreatmentsControllers {
         try
         {
             usernameP=username.getText();
+            UserService.checkPatientExistsInDoctorList(UserService.seePatients(LoginRegistrationControllers.getUsernameD()),usernameP);
             editMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/editTreatments.fxml")));
         }
         catch (Exception e)
@@ -73,6 +79,7 @@ public class manageTreatmentsControllers {
         try
         {
             usernameP=username.getText();
+            UserService.checkPatientExistsInDoctorList(UserService.seePatients(LoginRegistrationControllers.getUsernameD()),usernameP);
             deleteMessage.getScene().setRoot(FXMLLoader.load(getClass().getResource("/deleteTreatments.fxml")));
         }
         catch (Exception e)
