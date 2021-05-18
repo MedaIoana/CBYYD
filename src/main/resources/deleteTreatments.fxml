@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-        <?import java.lang.*?>
-        <?import javafx.scene.control.*?>
-        <?import javafx.scene.layout.*?>
-        <?import javafx.scene.shape.*?>
-        <?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.deleteTreatmentsControllers">
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.deleteTreatmentsControllers">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b0f1a" height="450.0" stroke="BLACK" strokeType="INSIDE" width="42.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b0f1a" height="450.0" stroke="BLACK" strokeType="INSIDE" width="42.0" />
         <Circle fill="#fac9b8" layoutX="88.0" layoutY="245.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
         <Circle fill="#fac9b8" layoutX="74.0" layoutY="384.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
         <Circle fill="#101d42" layoutX="21.0" layoutY="384.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
@@ -23,22 +22,22 @@
         <Circle fill="#fac9b8" layoutX="74.0" layoutY="109.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
 
 
-        <Text fill="#fac9b8" layoutX="137.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What treatment do you want to delete?" wrappingWidth="458.21630859375">
+        <Text fill="#fac9b8" layoutX="143.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What treatment do you want to delete?" wrappingWidth="458.21630859375">
             <font>
-                <Font name="Apple Chancery" size="28.0" />
+                <Font name="Arial Bold" size="28.0" />
             </font>
         </Text>
         <Text fx:id="deleteMessage" fill="#fac9b8" layoutX="152.0" layoutY="375.0" wrappingWidth="178.0" />
         <Button layoutX="640.0" layoutY="355.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="47.0" prefWidth="115.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Delete" textFill="#101d42">
             <font>
-                <Font name="Apple Chancery" size="18.0" />
+                <Font name="Arial Bold" size="19.0" />
             </font>
         </Button>
 
         <Text fx:id="backMessage" fill="#fac9b8" layoutX="143.0" layoutY="403.0" wrappingWidth="150.0" />
         <Button layoutX="507.0" layoutY="355.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="47.0" prefWidth="115.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Back" textFill="#101d42">
             <font>
-                <Font name="Apple Chancery" size="18.0" />
+                <Font name="Arial Bold" size="19.0" />
             </font>
         </Button>
 
@@ -48,4 +47,3 @@
         <Circle fill="#101d42" layoutX="21.0" layoutY="82.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
-

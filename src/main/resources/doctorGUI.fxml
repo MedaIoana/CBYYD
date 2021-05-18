@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
    <children>
       <Text fx:id="seePatientsMessage" />
       <Button layoutX="226.0" layoutY="88.0" mnemonicParsing="false" onAction="#seePatientsHandler" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="See patients" textFill="#65743a">
          <font>
-            <Font name="Apple Chancery" size="20.0" />
+            <Font name="Arial Bold" size="22.0" />
          </font></Button>
 
       <Text fx:id="managepatientMessage" layoutX="401.0" layoutY="169.0" wrappingWidth="125.0" />
       <Button layoutX="229.0" layoutY="156.0" mnemonicParsing="false" onAction="#managePatientsHandler" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Manage patients" textFill="#65743a">
          <font>
-            <Font name="Apple Chancery" size="20.0" />
+            <Font name="Arial Bold" size="22.0" />
          </font>
       </Button>
 
       <Text fx:id="manageTreatmentsMessage" layoutX="401.0" layoutY="222.0" wrappingWidth="125.0" />
       <Button layoutX="229.0" layoutY="234.0" mnemonicParsing="false" onAction="#manageTreatmentsHandler" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Manage treatments" textFill="#65743a">
          <font>
-            <Font name="Apple Chancery" size="20.0" />
+            <Font name="Arial Bold" size="22.0" />
          </font>
       </Button>
 
       <Text fx:id="createScheduleMessage" />
       <Button layoutX="229.0" layoutY="307.0" mnemonicParsing="false" onAction="#createScheduleHandler" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Create schedule" textFill="#65743a">
          <font>
-            <Font name="Apple Chancery" size="20.0" />
+            <Font name="Arial Bold" size="22.0" />
          </font>
       </Button>
       <Text fill="#6b0f1a" layoutX="295.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My menu" wrappingWidth="153.6533203125">
          <font>
-            <Font name="Apple Chancery" size="35.0" />
+            <Font name="Arial Bold" size="34.0" />
          </font>
       </Text>
       <Text fill="#65743a" layoutX="18.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/@CBYYD">
@@ -49,7 +46,7 @@
       <Text fx:id="logoutMessage" />
       <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#logoutHandler" prefHeight="43.0" prefWidth="109.0" style="-fx-background-radius: 90; -fx-background-color: #65743a;" text="Log out" textFill="#101d42">
          <font>
-            <Font name="Apple Chancery" size="18.0" />
+            <Font name="Arial Bold" size="18.0" />
          </font></Button>
       <Circle fill="#6b0f1a" layoutX="189.0" layoutY="328.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#6b0f1a" layoutX="189.0" layoutY="259.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />

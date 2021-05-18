@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.patientGUIControllers">
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.patientGUIControllers">
    <children>
-      <Label layoutX="341.0" layoutY="5.0" prefHeight="39.0" prefWidth="230.0" text="My menu" textFill="#fac9b8">
+      <Label layoutX="314.0" layoutY="14.0" prefHeight="39.0" prefWidth="230.0" text="My menu" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="30.0" />
+            <Font name="Arial Bold" size="31.0" />
          </font>
       </Label>
       <Text fx:id="seeTreatmentsMessage" layoutX="16.0" layoutY="117.0" wrappingWidth="194.0" />
-      <Button layoutX="219.0" layoutY="116.0" mnemonicParsing="false" onAction="#TreatementsTestsHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="See treatments and tests" textFill="#101d42">
+      <Button layoutX="219.0" layoutY="116.0" mnemonicParsing="false" onAction="#TreatementsTestsHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="See treatments and tests" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="23.0" />
+            <Font name="Arial Bold" size="23.0" />
          </font>
       </Button>
       <Text fx:id="seeDoctorScheduleMessage" layoutX="18.0" layoutY="188.0" wrappingWidth="194.0" />
-      <Button layoutX="219.0" layoutY="191.0" mnemonicParsing="false" onAction="#DoctorScheduleHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="See doctor's schedule" textFill="#101d42">
+      <Button layoutX="219.0" layoutY="191.0" mnemonicParsing="false" onAction="#DoctorScheduleHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="See doctor's schedule" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="24.0" />
+            <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
       <Text fx:id="makeAppointmentMessage" layoutX="21.0" layoutY="241.0" wrappingWidth="125.0" />
-      <Button layoutX="219.0" layoutY="264.0" mnemonicParsing="false" onAction="#AppointmentHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Make an appoiment" textFill="#101d42">
+      <Button layoutX="219.0" layoutY="264.0" mnemonicParsing="false" onAction="#AppointmentHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Make an appoiment" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="23.0" />
+            <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
       <Text fx:id="mySchedule" layoutX="21.0" layoutY="320.0" wrappingWidth="125.0" />
-      <Button layoutX="219.0" layoutY="338.0" mnemonicParsing="false" onAction="#ScheduleHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="My schedule" textFill="#101d42">
+      <Button layoutX="219.0" layoutY="338.0" mnemonicParsing="false" onAction="#ScheduleHandler" prefHeight="62.0" prefWidth="363.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="My schedule" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="23.0" />
+            <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
 
@@ -46,12 +44,12 @@
 
       <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#logoutHandler" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Log out" textFill="#101d42">
          <font>
-            <Font name="Apple Chancery" size="19.0" />
+            <Font name="Arial Bold" size="19.0" />
          </font>
       </Button>
 
       
-      <Text layoutX="16.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/@CBYYD">
+      <Text fill="#65743a" layoutX="16.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/@CBYYD">
          <font>
             <Font name="Apple Braille" size="11.0" />
          </font>

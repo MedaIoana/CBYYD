@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="801.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.manageTreatmentsControllers">
+<AnchorPane prefHeight="450.0" prefWidth="801.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.manageTreatmentsControllers">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b0f1a" height="58.0" stroke="BLACK" strokeType="INSIDE" width="801.0" />
         <Text fill="#101d42" layoutX="320.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage patients">
             <font>
-                <Font name="Apple Chancery" size="30.0" />
+                <Font name="Arial Bold" size="30.0" />
             </font>
         </Text>
 
@@ -24,42 +23,42 @@
 
         <Text fill="#fac9b8" layoutX="138.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please introduce an username to manage their treatments it" wrappingWidth="504.80712890625">
             <font>
-                <Font name="Apple Chancery" size="24.0" />
+                <Font name="Arial Bold" size="25.0" />
             </font>
         </Text>
         
         <TextField fx:id="username" layoutX="237.0" layoutY="160.0" prefHeight="24.0" prefWidth="262.0" style="-fx-background-radius: 90;" />
       <Text fill="#fac9b8" layoutX="244.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What do you want to do?" wrappingWidth="361.82421875">
          <font>
-            <Font name="Apple Chancery" size="26.0" />
+            <Font name="Arial Bold" size="26.0" />
          </font>
       </Text>
 
         <Text fx:id="addMessage" fill="#fac9b8" layoutX="42.0" layoutY="378.0" wrappingWidth="206.0" />
-      <Button layoutX="69.0" layoutY="267.0" mnemonicParsing="false" onAction="#addHandler" prefHeight="67.0" prefWidth="168.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Add" textFill="#101d42">
+      <Button layoutX="69.0" layoutY="267.0" mnemonicParsing="false" onAction="#addHandler" prefHeight="67.0" prefWidth="168.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Add" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="24.0" />
+            <Font name="Arial Bold" size="25.0" />
          </font>
       </Button>
 
    <Text fx:id="editMessage" fill="#fac9b8" layoutX="298.0" layoutY="370.0" wrappingWidth="206.0" />
-      <Button layoutX="329.0" layoutY="267.0" mnemonicParsing="false" onAction="#editHandler" prefHeight="67.0" prefWidth="149.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Edit" textFill="#101d42">
+      <Button layoutX="329.0" layoutY="267.0" mnemonicParsing="false" onAction="#editHandler" prefHeight="67.0" prefWidth="149.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Edit" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="24.0" />
+            <Font name="Arial Bold" size="26.0" />
          </font>
       </Button>
 
         <Text fx:id="deleteMessage" fill="#fac9b8" layoutX="592.0" layoutY="370.0" wrappingWidth="177.0" />
-      <Button layoutX="581.0" layoutY="267.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="67.0" prefWidth="124.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Delete" textFill="#101d42">
+      <Button layoutX="581.0" layoutY="267.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="67.0" prefWidth="124.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Delete" textFill="#fac9b8">
          <font>
-            <Font name="Apple Chancery" size="24.0" />
+            <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
 
         <Text fx:id="backMessage" layoutX="61.0" layoutY="412.0" wrappingWidth="284.00001525878906" />
         <Button layoutX="55.0" layoutY="8.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="27.0" prefWidth="76.0" style="-fx-background-radius: 90; -fx-background-color: #65743a;" text="Back" textFill="#101d42">
             <font>
-                <Font name="Apple Chancery" size="16.0" />
+                <Font name="Arial Bold" size="18.0" />
             </font>
         </Button>
     </children>

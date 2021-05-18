@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.createPatientScheduleControllers">
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.createPatientScheduleControllers">
     <children>
         <Text fx:id="backMessage" fill="#fac9b8" layoutX="43.0" layoutY="435.0" wrappingWidth="284.00001525878906" />
         <Button layoutX="13.0" layoutY="26.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="50.0" prefWidth="81.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Back" textFill="#101d42">
             <font>
-                <Font name="Apple Chancery" size="19.0" />
+                <Font name="Arial Bold" size="19.0" />
             </font></Button>
         <TableView fx:id="tableView" layoutX="24.0" layoutY="83.0" prefHeight="299.0" prefWidth="732.0">
             <columns>
@@ -24,16 +23,16 @@
         </TableView>
         <Label layoutX="96.0" layoutY="25.0" prefHeight="51.0" prefWidth="659.0" style="-fx-background-color: #fac9b8;" text="                            Create Your Schedule " textFill="#101d42">
             <font>
-                <Font name="Apple Chancery" size="27.0" />
+                <Font name="Arial Bold" size="28.0" />
             </font>
         </Label>
         <Text fx:id="saveMessage" fill="#fac9b8" layoutX="54.0" layoutY="419.0" wrappingWidth="593.0000152587891">
             <font>
                 <Font size="14.0" />
             </font></Text>
-        <Button layoutX="681.0" layoutY="390.0" mnemonicParsing="false" onAction="#saveHandler" prefHeight="47.0" prefWidth="92.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Save" textFill="WHITE">
+        <Button layoutX="681.0" layoutY="390.0" mnemonicParsing="false" onAction="#saveHandler" prefHeight="47.0" prefWidth="92.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Save" textFill="#101d42">
             <font>
-                <Font name="Apple Chancery" size="18.0" />
+                <Font name="Arial Bold" size="19.0" />
             </font>
         </Button>
     </children>
