@@ -62,40 +62,4 @@ public class editTreatmentsControllers implements Initializable {
 
         });
     }
-
-    /** private void initTable()
-    {
-        initCell();
-    }
-**/
-  /**  private void initCell()
-    {
-        treatmentsListCell.setCellValueFactory(new PropertyValueFactory<Treatments,String>("Treatments"));
-        editableTable();
-    }
-
-    private void editableTable()
-    {
-        treatmentsListCell.setCellFactory(TextFieldTableCell.forTableColumn());
-        treatmentsListCell.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setTreatment(e.getNewValue());
-        });
-        treatment.setEditable(true);
-
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        List<Treatments> list=UserService.seeTreatments(manageTreatmentsControllers.getUsernameP());
-        ObservableList<Treatments> obs=FXCollections.observableArrayList();
-
-        if(list!=null)
-        {
-            obs.addAll(list);
-        }
-        treatment.setItems(obs);
-      // treatment.getItems().addAll(UserService.seeTreatments(manageTreatmentsControllers.getUsernameP()));
-       initTable();
-        //treatment.getItems().addAll(UserService.seeTreatments())
-    }**/
 }
