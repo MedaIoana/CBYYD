@@ -66,10 +66,4 @@ public class LoginRegistrationControllersTest extends ApplicationTest{
         assertEquals("An account with the username " + TEST_USER + " already exists!",controller.registrationMessage.getText());
     }
 
-    @Test
-    public void testUsernamePassword(){
-        controller.handleLoginAction();
-
-    }
-
 }

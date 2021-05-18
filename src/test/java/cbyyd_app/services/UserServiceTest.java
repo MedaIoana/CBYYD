@@ -1,6 +1,9 @@
 package cbyyd_app.services;
 
-import cbyyd_app.exceptions.CodeAlreadyExist;
+import cbyyd_app.exceptions.*;
+import cbyyd_app.user.User;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -8,6 +11,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -54,7 +58,64 @@ public class UserServiceTest {
         assertEquals(2, UserService.users.size());
     }
 
+    @Test
+    public void testAddOneUserIsPersisted() throws Exception, CodeAlreadyExist {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test", "testPass", "Patient","");
+        List<User> users = new ObjectMapper().readValue(UserService.USERS_PATH.toFile(), new TypeReference<List<User>>() {
+        });
+        assertNotNull(users);
+        assertEquals(1, users.size());
+    }
 
+    @Test
+    public void testAddTwoUserArePersisted() throws Exception, CodeAlreadyExist {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test1", "testPass1", "Doctor","8669");
+        UserService.addUser("test2", "testPass2", "Doctor","4723");
+        List<User> users = new ObjectMapper().readValue(UserService.USERS_PATH.toFile(), new TypeReference<List<User>>() {
+        });
+        assertNotNull(users);
+        assertEquals(2, users.size());
+    }
+
+    @Test
+    public void testLoadWithUserPAsswordRole() throws IOException, CodeAlreadyExist, UsernameAlreadyExistsException {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test1", "testPass1", "Doctor","8669");
+       try {
+           UserService.checkUsernameAndPassword("test1", "testPass", "Doctor");
+       }catch (WrongUsernamePasswordException e){
+        assertEquals("The username or the password are incorrect, or the role is misleading",e.getMessage());
+       }
+
+    }
+
+    @Test
+    public void testAddinDoctorListExistingPatient() throws IOException, CodeAlreadyExist, UsernameAlreadyExistsException {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test1", "testPass1", "Doctor","8669");
+        UserService.addUser("test", "testPass", "Patient","");
+        try {
+            UserService.addPatients("test","test1");
+            UserService.addPatients("test","test1");
+        }catch (PatientAlreadyExistsExeption | PatientDoesNotExistsAsUser e){
+            assertEquals("Patient test is already in the list!",e.getMessage());
+        }
+    }
+
+    @Test
+    public void testAddinDoctorListInexistingPatient() throws IOException, CodeAlreadyExist, UsernameAlreadyExistsException {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test1", "testPass1", "Doctor","8669");
+        UserService.addUser("test", "testPass", "Patient","");
+        try {
+            UserService.addPatients("test","test1");
+            UserService.addPatients("test3","test1");
+        }catch (PatientAlreadyExistsExeption | PatientDoesNotExistsAsUser e){
+            assertEquals("Patient test3 does not exists as a user!",e.getMessage());
+        }
+    }
 
     @Test
     public void testPasswordEncoding() {
