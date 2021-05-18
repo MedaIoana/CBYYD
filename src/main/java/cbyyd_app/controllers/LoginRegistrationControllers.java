@@ -55,7 +55,7 @@ public class LoginRegistrationControllers {
     @FXML
     public void handleLoginAction() {
         try {
-            UserService.checkUsernameAndPassword(usernameField.getText(),passwordField.getText());
+            UserService.checkUsernameAndPassword(usernameField.getText(),passwordField.getText(),role.getValue());
             if (role.getValue().equals("Patient")) {
                 try {
                     usernameP=usernameField.getText();
