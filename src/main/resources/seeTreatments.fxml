@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.shape.CubicCurve?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.281"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="cbyyd_app.controllers.seeTreatmentsControllers"
-            prefHeight="400.0" prefWidth="600.0">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.seeTreatmentsControllers">
 
     <children>
-        <ScrollBar layoutX="514.0" layoutY="131.0" orientation="VERTICAL" prefHeight="231.0" prefWidth="19.0" />
-        <ListView fx:id="list" layoutX="86.0" layoutY="131.0" prefHeight="231.0" prefWidth="428.0" />
-        <Label layoutX="208.0" layoutY="24.0" text="Your treatments:">
+        <ScrollBar layoutX="635.0" layoutY="131.0" orientation="VERTICAL" prefHeight="231.0" prefWidth="19.0" />
+        <ListView fx:id="list" layoutX="42.0" layoutY="131.0" prefHeight="231.0" prefWidth="593.0" />
+        <Label layoutX="232.0" layoutY="22.0" text="Your treatments:" textFill="#fac9b8">
             <font>
-                <Font size="24.0" />
+                <Font name="Apple Chancery" size="30.0" />
             </font>
         </Label>
         <Text fx:id="backMessage" layoutX="45.0" layoutY="15.0" wrappingWidth="284.00001525878906" />
-        <Button layoutY="2.0" mnemonicParsing="false" onAction="#BackHandler" text="🔙">
+        <Button layoutX="4.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackHandler" prefHeight="44.0" prefWidth="87.0" style="-fx-background-radius: 90; -fx-background-color: #65743a;" text="Back" textFill="#101d42">
             <font>
-                <Font size="18.0" />
+                <Font name="Apple Chancery" size="17.0" />
             </font>
         </Button>
-        <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="308.0" fill="MAROON" layoutX="292.0" layoutY="89.0" startX="-292.0" stroke="BLACK" />
+        <Circle fill="#65743a" layoutX="550.0" layoutY="34.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#65743a" layoutX="491.0" layoutY="77.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#65743a" layoutX="600.0" layoutY="86.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#65743a" layoutX="687.0" layoutY="34.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#65743a" layoutX="219.0" layoutY="77.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#65743a" layoutX="91.0" layoutY="86.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#65743a" layoutX="152.0" layoutY="34.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="45.0" layoutY="86.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="22.0" layoutY="117.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="337.0" layoutY="102.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="434.0" layoutY="94.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="116.0" layoutY="50.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="718.0" layoutY="60.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="662.0" layoutY="86.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="617.0" layoutY="42.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="541.0" layoutY="86.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="474.0" layoutY="34.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="267.0" layoutY="86.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="210.0" layoutY="34.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#6b0f1a" layoutX="152.0" layoutY="86.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>

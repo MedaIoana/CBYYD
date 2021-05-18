@@ -1,51 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.managingpatientControllers">
-    
-    <Label layoutX="136.0" layoutY="179.0" prefHeight="45.0" prefWidth="169.0" text="Username:" GridPane.rowIndex="2">
-      <font>
-         <Font size="30.0" />
-      </font></Label>
-    <TextField fx:id="usernameField" layoutX="316.0" layoutY="181.0" prefHeight="35.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-      <font>
-         <Font size="18.0" />
-      </font></TextField>
-
-   <Text fx:id="addingMessage" layoutX="35.0" layoutY="370.0" wrappingWidth="253.0">
-      <font>
-         <Font size="14.0" />
-      </font></Text>
-   <Button layoutX="117.0" layoutY="293.0" mnemonicParsing="false" onAction="#addHandler" style="-fx-background-color: #196F3D;" text="ADD" textFill="WHITE">
-      <font>
-         <Font name="Arial Black" size="24.0" />
-      </font>
-   </Button>
-   <Text fx:id="deletingMessage" layoutX="467.0" layoutY="369.0" wrappingWidth="253.0">
-      <font>
-         <Font size="14.0" />
-      </font></Text>
-   <Button layoutX="578.0" layoutY="293.0" mnemonicParsing="false" onAction="#deleteHandler" style="-fx-background-color: #A02409;" text="DELETE" textFill="WHITE">
-      <font>
-         <Font name="Arial Black" size="24.0" />
-      </font>
-   </Button>
-   <Text fx:id="backMessage" layoutX="42.0" layoutY="37.0" wrappingWidth="284.00001525878906">
-      <font>
-         <Font size="14.0" />
-      </font></Text>
-   <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #FFFFFF;" text="🔙">
-      <font>
-         <Font size="24.0" />
-      </font>
-   </Button>
-   <CubicCurve controlX1="198.86724853515625" controlX2="50.0" controlY1="-95.0" controlY2="100.0" endX="498.00006103515625" endY="3.0" fill="#111e6c" layoutX="252.0" layoutY="80.0" startX="-252.0" startY="3.0" stroke="BLACK" />
-   <Circle fill="#111e6c" layoutX="117.0" layoutY="202.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#196f3d" height="5.0" layoutX="80.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#196f3d" height="30.0" layoutX="92.0" layoutY="305.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a02409" height="6.0" layoutX="534.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="29.0" />
+<AnchorPane prefHeight="450.0" prefWidth="799.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.managingpatientControllers">
+   <children>
+       
+       <Label layoutX="140.0" layoutY="148.0" prefHeight="45.0" prefWidth="169.0" text="Username:" textFill="#fac9b8" GridPane.rowIndex="2">
+         <font>
+            <Font name="Apple Chancery" size="30.0" />
+         </font>
+      </Label>
+       <TextField fx:id="usernameField" layoutX="316.0" layoutY="159.0" prefHeight="35.0" prefWidth="247.0" style="-fx-background-radius: 90;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+   
+      <Text fx:id="addingMessage" fill="#fac9b8" layoutX="42.0" layoutY="279.0" wrappingWidth="253.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="117.0" layoutY="293.0" mnemonicParsing="false" onAction="#addHandler" prefHeight="60.0" prefWidth="129.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Add" textFill="#101d42">
+         <font>
+            <Font name="Apple Chancery" size="24.0" />
+         </font>
+      </Button>
+      <Text fx:id="deletingMessage" fill="#fac9b8" layoutX="487.0" layoutY="279.0" wrappingWidth="253.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="578.0" layoutY="293.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="60.0" prefWidth="129.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="Delete" textFill="#101d42">
+         <font>
+            <Font name="Apple Chancery" size="24.0" />
+         </font>
+      </Button>
+      <Text fx:id="backMessage" layoutX="161.0" layoutY="48.0" wrappingWidth="284.00001525878906">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: #fac9b8; -fx-background-radius: 90;" text="Back">
+         <font>
+            <Font name="Apple Chancery" size="24.0" />
+         </font>
+      </Button>
+      <Circle fill="#fac9b8" layoutX="117.0" layoutY="176.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#65743a" height="5.0" layoutX="80.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#65743a" height="30.0" layoutX="92.0" layoutY="305.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b0f1a" height="6.0" layoutX="534.0" layoutY="317.0" stroke="BLACK" strokeType="INSIDE" width="29.0" />
+      <Circle fill="#fac9b8" layoutX="559.0" layoutY="399.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="467.0" layoutY="398.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="382.0" layoutY="398.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="330.0" layoutY="365.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="117.0" layoutY="413.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="56.0" layoutY="392.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="288.0" layoutY="413.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="184.0" layoutY="392.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="749.0" layoutY="413.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="714.0" layoutY="370.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="681.0" layoutY="413.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="621.0" layoutY="413.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="477.0" layoutY="408.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="768.0" layoutY="240.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="709.0" layoutY="118.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="758.0" layoutY="344.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="740.0" layoutY="185.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="777.0" layoutY="129.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="749.0" layoutY="60.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac9b8" layoutX="737.0" layoutY="282.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
 </AnchorPane>

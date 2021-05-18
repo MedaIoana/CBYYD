@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.281" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.makeAppointmentControllers">
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.makeAppointmentControllers">
     <children>
-    <Text fx:id="backMessage" layoutX="48.0" layoutY="46.0" wrappingWidth="284.00001525878906">
+    <Text fx:id="backMessage" fill="#fac9b8" layoutX="55.0" layoutY="417.0" wrappingWidth="284.00001525878906">
         <font>
             <Font size="14.0" />
         </font></Text>
-    <Button layoutY="2.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #FFFFF8;" text="🔙">
+    <Button layoutX="10.0" layoutY="5.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="47.0" prefWidth="73.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Back" textFill="#101d42">
         <font>
-            <Font size="20.0" />
+            <Font name="Apple Chancery" size="18.0" />
         </font></Button>
-    <TableView fx:id="tableView" layoutX="41.0" layoutY="50.0" prefHeight="271.0" prefWidth="699.0">
+    <TableView fx:id="tableView" layoutX="40.0" layoutY="67.0" prefHeight="254.0" prefWidth="700.0">
         <columns>
             <TableColumn fx:id="hoursCollumn" prefWidth="70.0" text="Hours" />
             <TableColumn fx:id="MondayCollumn" prefWidth="125.0" text="Monday" />
@@ -24,31 +25,31 @@
             <TableColumn fx:id="FridayCollumn" prefWidth="125.0" text="Friday" />
         </columns>
     </TableView>
-      <Label layoutX="8.0" layoutY="328.0" style="-fx-background-color: #5ECAAD;" text="Choose your date appointment:">
+      <Label layoutX="14.0" layoutY="330.0" style="-fx-background-color: #6b0f1a;" text="Choose your date appointment:" textFill="#101d42">
          <font>
-            <Font name="Arial Black" size="16.0" />
+            <Font name="Apple Chancery" size="20.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="hour" layoutX="122.0" layoutY="359.0" prefWidth="150.0" />
-      <Label layoutX="63.0" layoutY="359.0" style="-fx-background-color: #5ECAAD;" text="Hour:">
+      <ChoiceBox fx:id="hour" layoutX="99.0" layoutY="381.0" prefWidth="150.0" />
+      <Label layoutX="24.0" layoutY="375.0" style="-fx-background-color: #6b0f1a;" text="Hour:" textFill="#101d42">
          <font>
-            <Font name="Arial Black" size="16.0" />
+            <Font name="Apple Chancery" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="313.0" layoutY="360.0" style="-fx-background-color: #5ECAAD;" text="Day:">
+      <Label layoutX="306.0" layoutY="375.0" style="-fx-background-color: #6b0f1a;" text="Day:" textFill="#101d42">
          <font>
-            <Font name="Arial Black" size="16.0" />
+            <Font name="Apple Chancery" size="19.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="day" layoutX="361.0" layoutY="360.0" prefWidth="150.0" />
-      <Label layoutX="48.0" layoutY="14.0" prefHeight="27.0" prefWidth="709.0" style="-fx-background-color: #5ECAAD;" text="                                    Your Doctor's Schedule is:">
+      <ChoiceBox fx:id="day" layoutX="361.0" layoutY="380.0" prefWidth="150.0" />
+      <Label layoutX="106.0" layoutY="9.0" prefHeight="27.0" prefWidth="627.0" style="-fx-background-color: #6b0f1a;" text="                                    Your Doctor's Schedule is:" textFill="#101d42">
          <font>
-            <Font name="Arial Black" size="18.0" />
+            <Font name="Apple Chancery" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="546.0" layoutY="342.0" mnemonicParsing="false" style="-fx-background-color: #06870A;" text="Make Appointment">
+      <Button layoutX="536.0" layoutY="375.0" mnemonicParsing="false" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Make Appointment" textFill="#101d42">
          <font>
-            <Font name="Arial Black" size="16.0" />
+            <Font name="Apple Chancery" size="19.0" />
          </font>
       </Button>
     </children>
