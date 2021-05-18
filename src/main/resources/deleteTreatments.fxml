@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+        <?import java.lang.*?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+        <?import javafx.scene.shape.*?>
+        <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.deleteTreatmentsControllers">
-
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.deleteTreatmentsControllers">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111e6c" height="400.0" stroke="BLACK" strokeType="INSIDE" width="42.0" />
-        <Circle fill="#111e6c" layoutX="88.0" layoutY="245.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="79.0" layoutY="357.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="WHITE" layoutX="21.0" layoutY="282.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="56.0" layoutY="313.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="65.0" layoutY="282.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="56.0" layoutY="236.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="WHITE" layoutX="21.0" layoutY="91.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="56.0" layoutY="140.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="WHITE" layoutX="28.0" layoutY="191.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="74.0" layoutY="182.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="65.0" layoutY="68.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#111e6c" layoutX="74.0" layoutY="109.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b0f1a" height="450.0" stroke="BLACK" strokeType="INSIDE" width="42.0"/>
+        <Circle fill="#fac9b8" layoutX="88.0" layoutY="245.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="74.0" layoutY="384.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#101d42" layoutX="21.0" layoutY="384.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="65.0" layoutY="327.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="65.0" layoutY="282.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="56.0" layoutY="236.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#101d42" layoutX="21.0" layoutY="159.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="56.0" layoutY="140.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#101d42" layoutX="21.0" layoutY="231.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="74.0" layoutY="182.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="65.0" layoutY="68.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#fac9b8" layoutX="74.0" layoutY="109.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
 
 
-        <Text layoutX="140.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What treatment do you want to delete?" wrappingWidth="296.21630859375">
+        <Text fill="#fac9b8" layoutX="137.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What treatment do you want to delete?" wrappingWidth="458.21630859375">
             <font>
-                <Font size="20.0" />
+                <Font name="Apple Chancery" size="28.0" />
             </font>
         </Text>
-        <Text fx:id="deleteMessage" layoutX="129.0" layoutY="87.0" wrappingWidth="138.0" />
-        <Button layoutX="524.0" layoutY="351.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: #111e6c;" text="DELETE" textFill="WHITE" />
+        <Text fx:id="deleteMessage" fill="#fac9b8" layoutX="152.0" layoutY="375.0" wrappingWidth="178.0" />
+        <Button layoutX="640.0" layoutY="355.0" mnemonicParsing="false" onAction="#deleteHandler" prefHeight="47.0" prefWidth="115.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Delete" textFill="#101d42">
+            <font>
+                <Font name="Apple Chancery" size="18.0" />
+            </font>
+        </Button>
 
-        <Text fx:id="backMessage" layoutX="354.0" layoutY="87.0" wrappingWidth="150.0" />
-        <Button layoutX="459.0" layoutY="351.0" mnemonicParsing="false" onAction="#backHandler" style="-fx-background-color: #111e6c;" text="BACK" textFill="WHITE" />
-      <ListView fx:id="treatment" layoutX="140.0" layoutY="168.0" prefHeight="177.0" prefWidth="447.0" />
+        <Text fx:id="backMessage" fill="#fac9b8" layoutX="143.0" layoutY="403.0" wrappingWidth="150.0" />
+        <Button layoutX="507.0" layoutY="355.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="47.0" prefWidth="115.0" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Back" textFill="#101d42">
+            <font>
+                <Font name="Apple Chancery" size="18.0" />
+            </font>
+        </Button>
+
+        <ListView fx:id="treatment" layoutX="137.0" layoutY="128.0" prefHeight="217.0" prefWidth="598.0" />
+
+        <Circle fill="#101d42" layoutX="21.0" layoutY="305.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#101d42" layoutX="21.0" layoutY="82.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
-
 </AnchorPane>
+

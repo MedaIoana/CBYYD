@@ -20,7 +20,7 @@ public class deleteTreatmentsControllers implements Initializable {
     Text deleteMessage;
 
     @FXML
-    ListView treatment;
+    ListView<String> treatment;
 
     @FXML
     public void backHandler() {
@@ -37,7 +37,6 @@ public class deleteTreatmentsControllers implements Initializable {
         try {
             treatment.getItems().remove(treatment.getSelectionModel().getSelectedItem());
             ArrayList<String> t=new ArrayList<>(treatment.getItems());
-           // System.out.println((String) treatment.getSelectionModel().getSelectedItem());
             UserService.deleteTreatment(manageTreatmentsControllers.getUsernameP(), t);
             System.out.println(t);
             deleteMessage.setText("The treatment was deleted");

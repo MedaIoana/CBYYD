@@ -13,14 +13,14 @@ import java.util.ResourceBundle;
 public class seeTreatmentsControllers implements Initializable {
 
     @FXML
-    public ListView list;
+    ListView list;
 
     @FXML
     Text backMessage;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        list.getItems().addAll(UserService.seePatients(LoginRegistrationControllers.getUsernameD()));
+        list.getItems().addAll(UserService.seeTreatments(LoginRegistrationControllers.getUsernameP()));
     }
 
     @FXML

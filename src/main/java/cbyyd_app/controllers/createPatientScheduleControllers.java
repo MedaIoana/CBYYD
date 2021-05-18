@@ -42,9 +42,9 @@ public class createPatientScheduleControllers implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        int many=UserService.manySchedule(LoginRegistrationControllers.getUsernameD());
+        int many=UserService.manySchedule(LoginRegistrationControllers.getUsernameP());
         if(many==0) loadSchedule();
-        else tableView.getItems().addAll(UserService.seeSchedule(LoginRegistrationControllers.getUsernameD()));
+        else tableView.getItems().addAll(UserService.seeSchedule(LoginRegistrationControllers.getUsernameP()));
         initTable();
     }
 
@@ -117,7 +117,7 @@ public class createPatientScheduleControllers implements Initializable {
 
     public void saveHandler() {
         try{
-            UserService.saveSchedule(LoginRegistrationControllers.getUsernameD(), tableView.getItems());
+            UserService.saveSchedule(LoginRegistrationControllers.getUsernameP(), tableView.getItems());
             saveMessage.setText("The schedule was saved successfully!");
         } catch (Exception e) {
             saveMessage.setText(e.getMessage());
