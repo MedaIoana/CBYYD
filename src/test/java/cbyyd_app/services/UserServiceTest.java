@@ -19,7 +19,7 @@ public class UserServiceTest {
 
     @BeforeClass
     public static void setupClass() {
-        FileService.APPLICATION_FOLDER = ".test-registration-example";
+        FileService.APPLICATION_FOLDER = ".test-cbyyd";
         FileService.initApplicationHomeDirIfNeeded();
     }
 
@@ -80,6 +80,17 @@ public class UserServiceTest {
     }
 
     @Test
+    public void testCheckDoctorsCode() throws IOException, CodeAlreadyExist, UsernameAlreadyExistsException {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test1", "testPass1", "Doctor", "8669");
+        try {
+            UserService.addUser("test2", "testPass2", "Doctor", "8669");
+        }catch (CodeAlreadyExist e){
+            assertEquals("An account with this code 8669 already exists!",e.getMessage());
+        }
+    }
+
+    @Test
     public void testLoadWithUserPAsswordRole() throws IOException, CodeAlreadyExist, UsernameAlreadyExistsException {
         UserService.loadUsersFromFile();
         UserService.addUser("test1", "testPass1", "Doctor","8669");
@@ -114,6 +125,17 @@ public class UserServiceTest {
             UserService.addPatients("test3","test1");
         }catch (PatientAlreadyExistsExeption | PatientDoesNotExistsAsUser e){
             assertEquals("Patient test3 does not exists as a user!",e.getMessage());
+        }
+    }
+
+    @Test
+    public void testAddTreatmentForPatient() throws IOException, CodeAlreadyExist, UsernameAlreadyExistsException {
+        UserService.loadUsersFromFile();
+        UserService.addUser("test", "testPass", "Patient","");
+        try {
+            UserService.addTreatments("test","treatmenttest");
+        }catch (PatientDoesNotExistsAsUser e){
+            assertEquals("Patient %s does not exists as a user!",e.getMessage());
         }
     }
 

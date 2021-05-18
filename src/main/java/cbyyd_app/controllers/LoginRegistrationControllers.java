@@ -21,7 +21,7 @@ public class LoginRegistrationControllers {
     @FXML
     Text registrationMessage;
     @FXML
-    public Text loginMessage;
+    Text loginMessage;
     @FXML
     PasswordField passwordField;
     @FXML
