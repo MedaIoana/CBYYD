@@ -213,10 +213,10 @@ public class UserService {
         }
     }
 
-    public static void checkUsernameAndPassword(String username, String password) throws  WrongUsernamePasswordException{
+    public static void checkUsernameAndPassword(String username, String password,String role) throws  WrongUsernamePasswordException{
         boolean find=false;
         for (User user: users) {
-            if(Objects.equals(username,user.getUsername()) && Objects.equals(encodePassword(username,password),user.getPassword())){
+            if(Objects.equals(username,user.getUsername()) && Objects.equals(encodePassword(username,password),user.getPassword()) && Objects.equals(role,user.getRole())){
                 find=true;
                 break;
             }
