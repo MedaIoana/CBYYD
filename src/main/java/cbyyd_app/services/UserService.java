@@ -260,6 +260,51 @@ public class UserService {
         return md;
     }
 
+    public static boolean checkIfAvailable(String doctor,String hour,String day) {
+        for (User user : users) {
+            if (Objects.equals(doctor, user.getUsername())) {
+                for (Week week : user.getSchedule()) {
+                    if(day.equals("Monday")) {
+                        if (week.getHours().equals(hour) && week.getMonday().equals("available")) {
+                            week.setMonday("bussy");
+                            persistUsers();
+                            return true;
+                        }
+                    }
+                    if(day.equals("Tuesday")) {
+                        if (week.getHours().equals(hour) && week.getTuesday().equals("available")) {
+                            week.setTuesday("bussy");
+                            persistUsers();
+                            return true;
+                        }
+                    }
+                    if(day.equals("Wednesday")) {
+                        if (week.getHours().equals(hour) && week.getWednesday().equals("available")) {
+                            week.setWednesday("bussy");
+                            persistUsers();
+                            return true;
+                        }
+                    }
+                    if(day.equals("Thursday")) {
+                        if (week.getHours().equals(hour) && week.getThursday().equals("available")) {
+                            week.setThursday("bussy");
+                            persistUsers();
+                            return true;
+                        }
+                    }
+                    if(day.equals("Friday")) {
+                        if (week.getHours().equals(hour) && week.getFriday().equals("available")) {
+                            week.setFriday("bussy");
+                            persistUsers();
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public static List<User> getUsers() {
         return users;
     }

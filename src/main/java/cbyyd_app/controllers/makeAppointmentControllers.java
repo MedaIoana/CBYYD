@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 
 public class makeAppointmentControllers implements Initializable {
     @FXML
+    public Text appointmentMessage;
+    @FXML
     Text backMessage;
     @FXML
     private TableView<Week> tableView;
@@ -55,5 +57,11 @@ public class makeAppointmentControllers implements Initializable {
         ThursdayCollumn.setCellValueFactory(new PropertyValueFactory<Week,String>("Thursday"));
         FridayCollumn.setCellValueFactory(new PropertyValueFactory<Week,String>("Friday"));
         tableView.getItems().addAll(UserService.seeSchedule(UserService.getMyDoctor(LoginRegistrationControllers.getUsernameP())));
+    }
+
+    public void makeAppointment() {
+        if(UserService.checkIfAvailable(UserService.getMyDoctor(LoginRegistrationControllers.getUsernameP()),hour.getValue(),day.getValue()))
+            appointmentMessage.setText("Appointment created successfully!");
+        else appointmentMessage.setText("Not available spot, please choose again!");
     }
 }
