@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -47,7 +46,12 @@
             <Font name="Apple Chancery" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="536.0" layoutY="375.0" mnemonicParsing="false" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Make Appointment" textFill="#101d42">
+        <Text fx:id="appointmentMessage" fill="WHITE" layoutX="488.0" layoutY="360.0" wrappingWidth="284.00001525878906" GridPane.rowIndex="11">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+      <Button layoutX="536.0" layoutY="375.0" mnemonicParsing="false" onAction="#makeAppointment" style="-fx-background-color: #65743a; -fx-background-radius: 90;" text="Make Appointment" textFill="#101d42">
          <font>
             <Font name="Apple Chancery" size="19.0" />
          </font>

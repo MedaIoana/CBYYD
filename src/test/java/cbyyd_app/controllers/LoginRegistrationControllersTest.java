@@ -44,6 +44,7 @@ public class LoginRegistrationControllersTest extends ApplicationTest{
         controller.loginMessage=new Text();
         controller.registrationMessage=new Text();
         controller.codeField=new TextField();
+        controller.loginMessage=new Text();
 
         controller.passwordField.setText(TEST_PASSWORD);
         controller.usernameField.setText(TEST_USER);
@@ -66,10 +67,6 @@ public class LoginRegistrationControllersTest extends ApplicationTest{
         assertEquals("An account with the username " + TEST_USER + " already exists!",controller.registrationMessage.getText());
     }
 
-    @Test
-    public void testUsernamePassword(){
-        controller.handleLoginAction();
 
-    }
 
 }

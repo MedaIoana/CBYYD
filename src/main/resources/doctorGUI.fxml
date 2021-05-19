@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
+<AnchorPane  prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #101d42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbyyd_app.controllers.doctorGUIControllers">
    <children>
       <Text fx:id="seePatientsMessage" />
       <Button layoutX="226.0" layoutY="88.0" mnemonicParsing="false" onAction="#seePatientsHandler" prefHeight="53.0" prefWidth="306.0" style="-fx-background-color: #6b0f1a; -fx-background-radius: 90;" text="See patients" textFill="#65743a">

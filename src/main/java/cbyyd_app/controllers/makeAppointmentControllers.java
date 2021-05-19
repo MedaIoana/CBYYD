@@ -2,6 +2,7 @@ package cbyyd_app.controllers;
 
 import cbyyd_app.services.UserService;
 import cbyyd_app.user.Week;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class makeAppointmentControllers implements Initializable {
+    public Text appointmentMessage;
     @FXML
     Text backMessage;
     @FXML
@@ -55,5 +57,12 @@ public class makeAppointmentControllers implements Initializable {
         ThursdayCollumn.setCellValueFactory(new PropertyValueFactory<Week,String>("Thursday"));
         FridayCollumn.setCellValueFactory(new PropertyValueFactory<Week,String>("Friday"));
         tableView.getItems().addAll(UserService.seeSchedule(UserService.getMyDoctor(LoginRegistrationControllers.getUsernameP())));
+    }
+
+
+    public void makeAppointment() {
+       if(UserService.checkIfAvailable(UserService.getMyDoctor(LoginRegistrationControllers.getUsernameP()),hour.getValue(),day.getValue()))
+           appointmentMessage.setText("Appointment created successfully!");
+       else appointmentMessage.setText("Not available spot, please choose again!");
     }
 }
